@@ -41,32 +41,19 @@ def generate_xml(args):
     template = template.replace('<!-- INF_PERIOD -->', str(365/args.infPeriod))
     template = template.replace('<!-- PH -->', str(args.pH))
     template = template.replace('<!-- TAU -->', str(tau))
-    template = template.replace('<!-- R0_INIT -->',
-                                str(random.uniform(args.R0InitRange[0],
-                                                   args.R0InitRange[1])))
     template = template.replace('<!-- R0M -->', str(args.R0M))
     template = template.replace('<!-- R0S -->', str(args.R0S))
-    template = template.replace('<!-- E_INIT -->', str(random.uniform(args.EInitRange[0],
-                                                                      args.EInitRange[1])))
     template = template.replace('<!-- EM -->', str(args.EM))
     template = template.replace('<!-- IhM -->', str(args.IhM))
     template = template.replace('<!-- EXOG_PERIOD -->',
                                 str(365/(args.infPeriod+args.latPeriod)))
-    template = template.replace('<!-- EXOG_INIT -->',
-                                str(random.uniform(args.exogInitRange[0],
-                                                   args.exogInitRange[1])))
+
     template = template.replace('<!-- EXOG_INIT_M -->',
                                 str(args.exogInitM))
-    template = template.replace('<!-- EXOG_GROWTH_RATE_INIT -->',
-                                str(random.uniform(args.exogGrInitRange[0],
-                                                   args.exogGrInitRange[1])))
     template = template.replace('<!-- EXOG_GROWTH_RATE_M -->',
                                 str(args.exogGrM))
     template = template.replace('<!-- EXOG_GROWTH_RATE_S -->',
                                 str(args.exogGrS))
-    template = template.replace('<!-- IMPORT_RATE_INIT -->',
-                                str(random.uniform(args.importRateInitRange[0],
-                                                   args.importRateInitRange[1])))
     template = template.replace('<!-- IMPORT_RATE_M -->',
                                 str(args.importRateM))
     template = template.replace('<!-- IMPORT_RATE_U -->',

@@ -63,17 +63,6 @@ parser.add_argument('--importChangeDate',
                     help='date when importation changes', default=2050)
 parser.add_argument('--importChange',
                     help='factor by which import rate changes', default=1)
-# Initial value ranges
-parser.add_argument('--R0InitRange', help='range of initial R0 values',
-                    default=(2, 5))
-parser.add_argument('--exogGrInitRange', help='range for initial exog GR value',
-                    default=(20, 30))
-parser.add_argument('--exogInitRange', help='initial size of exog (at t0)',
-                    default=(0, 1))
-parser.add_argument('--importRateInitRange',
-                    help='range of initial import rate', default=(5, 10))
-parser.add_argument('--EInitRange', help='range of initial people in E class',
-                    default=(1, 10))
 # Run ID
 parser.add_argument('--id', help='run id', default = 'Israel_SARS_CoV-2')
 args = parser.parse_args()

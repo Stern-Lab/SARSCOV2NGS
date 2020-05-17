@@ -32,12 +32,12 @@ name="alignment">
         <parameter id="clockRate.c:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="7.0E-4" name="stateNode" upper="0.002">0.0018</parameter>
         <parameter id="kappa.s:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
         <parameter id="gammaShape.s:SEIR_TEMPLATE" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-        <parameter id="seir.R0.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode"><!-- R0_INIT --></parameter>
+        <parameter id="seir.R0.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">5</parameter>
         <parameter id="seir.a.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" upper="2.0" name="stateNode">1</parameter>
-        <parameter id="seir.exogGrowthRate.t:SEIR_TEMPLATE" spec="parameter.RealParameter" name="stateNode"><!-- EXOG_GROWTH_RATE_INIT --></parameter>
-        <parameter id="seir.exog.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode"><!-- EXOG_INIT --></parameter>
-        <parameter id="seir.importRate.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" upper="<!-- IMPORT_RATE_U -->" name="stateNode" ><!-- IMPORT_RATE_INIT --></parameter>
-        <parameter id="seir.E.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode"><!-- E_INIT --></parameter>
+        <parameter id="seir.exogGrowthRate.t:SEIR_TEMPLATE" spec="parameter.RealParameter" name="stateNode">36.5</parameter>
+        <parameter id="seir.exog.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">1</parameter>
+        <parameter id="seir.importRate.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" upper="<!-- IMPORT_RATE_U -->" name="stateNode" >1.0</parameter>
+        <parameter id="seir.E.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
         <parameter id="freqParameter.s:SEIR_TEMPLATE" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
     </state>
 
