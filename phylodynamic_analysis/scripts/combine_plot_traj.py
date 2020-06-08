@@ -561,7 +561,7 @@ if __name__ == "__main__":
     plot_ph_eta_sensitivity(args, violin_data, plot_params, israel_reported_data)
     plot_traj_combined(args, all_results, ph_s, args.etas[2], israel_reported_data)
     plot_state_probs(args, all_results, args.phs, args.etas)
-    make_table(args, rows, data, args.phs, args.etas)
+    make_table(args, table_rows, data, args.phs, args.etas)
     args.ph = 0.05
     args.eta = 1000
     args.tree_path = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.trees'.\
