@@ -24,7 +24,7 @@ def generate_xml(args):
     masked_fasta = list(SeqIO.parse(args.finalAln, 'fasta'))
     sequence_block = generate_sequence_block(masked_fasta)
     time_block = generate_time_block(masked_fasta)
-    tau = (1-args.pH)*(1/args.pH)/(1/args.P - 1)
+    tau = (1-args.ph)*(1/args.ph)/(1/args.P - 1)
     with open(args.finalTree, 'r') as infile:
         initTree = infile.read()
     with open(args.xmlTemplate, 'r') as infile:
@@ -37,31 +37,22 @@ def generate_xml(args):
     template = template.replace('<!-- SIR_T0 -->', str(args.sirT0))
     template = template.replace('<!-- S -->', str(args.s))
     template = template.replace('<!-- LATENT_PERIOD -->',
-                                str(365/args.latPeriod))
-    template = template.replace('<!-- INF_PERIOD -->', str(365/args.infPeriod))
-    template = template.replace('<!-- PH -->', str(args.pH))
+                                str(366/args.latPeriod))
+    template = template.replace('<!-- INF_PERIOD -->', str(366/args.infPeriod))
+    template = template.replace('<!-- PH -->', str(args.ph))
     template = template.replace('<!-- TAU -->', str(tau))
     template = template.replace('<!-- R0M -->', str(args.R0M))
     template = template.replace('<!-- R0S -->', str(args.R0S))
     template = template.replace('<!-- EM -->', str(args.EM))
-    template = template.replace('<!-- IhM -->', str(args.IhM))
     template = template.replace('<!-- EXOG_PERIOD -->',
-                                str(365/(args.infPeriod+args.latPeriod)))
-
+                                str(366/(args.infPeriod+args.latPeriod)))
     template = template.replace('<!-- EXOG_INIT_M -->',
                                 str(args.exogInitM))
-    template = template.replace('<!-- EXOG_GROWTH_RATE_M -->',
-                                str(args.exogGrM))
-    template = template.replace('<!-- EXOG_GROWTH_RATE_S -->',
-                                str(args.exogGrS))
-    template = template.replace('<!-- IMPORT_RATE_M -->',
-                                str(args.importRateM))
-    template = template.replace('<!-- IMPORT_RATE_U -->',
-                                str(args.importRateU))
-    template = template.replace('<!-- IMPORT_CHANGE_DATE -->',
-                                str(args.importChangeDate))
-    template = template.replace('<!-- IMPORT_CHANGE -->',
-                                str(args.importChange))
+    template = template.replace('<!-- EXOG_GROWTH_RATE -->',
+                                str(args.exogGR))
+    template = template.replace('<!-- IMPORT_RATE -->',
+                                str(args.importRate))
+
     if args.R0ChangeDate == 'NA':
         # todo make this...better?
         R0ChangeDate_operator = '''<operator id="seir.a.operator.t:{0}" \

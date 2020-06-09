@@ -60,7 +60,7 @@ def process_fasta(args):
     metadata['numeric_date'] = pd.to_datetime(
         metadata['date']).apply(numeric_date)
     aligned = list(SeqIO.parse(args.aln, "fasta"))
-    aligned, names = rename_aln(aligned, args.pH, metadata)
+    aligned, names = rename_aln(aligned, args.ph, metadata)
     tree = Phylo.read(args.initTree, 'newick')
     tree = rescale_tree(tree)       # TODO WHY DO WE NEED THIS
     for tip in tree.get_terminals():
@@ -114,26 +114,26 @@ if __name__ == "__main__":
                         default=0.5)
     parser.add_argument('--R0ChangeDate', help='date on which R0 changes by factor a',
                         default=(2020+(31+29+19)/366))    # default is no R0 change
-    parser.add_argument('--EM', help='mean of initial number of people in E'
+    parser.add_argument('--EM', help='mean of initial number of people in E',
                         default=1.0)
     parser.add_argument('--exogInitM', help='mean on prior for inital size of exog',
                         default=1.0)
-    parser.add_argument('--exogGR', help='growth rate of exog', defualt=24.0)
+    parser.add_argument('--exogGR', help='growth rate of exog', default=24.0)
     parser.add_argument('--importRate',
                         help='import rate', default=1000)
     parser.add_argument('--id', help='run id', default = 'Israel_SARS_CoV-2')
     args = parser.parse_args()
     for ph in [0.02, 0.05, 0.1, 0.2, 0.5, 0.80]:
-    args.ph = ph
-    for eta in [10, 100, 1000, 2500, 5000]:
-        args.importRate = eta
-        run_id = 'june3_fix_import'
-        args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
-        args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
-        args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
-        subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
-        args = process_fasta(args)
-        gx.generate_xml(args)
-        print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
+        args.ph = ph
+        for eta in [10, 100, 1000, 2500, 5000]:
+            args.importRate = eta
+            run_id = 'june3_fix_import'
+            args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
+            args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
+            args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
+            subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
+            args = process_fasta(args)
+            gx.generate_xml(args)
+            print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
 
 
