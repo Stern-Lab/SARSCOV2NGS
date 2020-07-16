@@ -122,14 +122,31 @@ if __name__ == "__main__":
                         help='import rate', default=1000)
     parser.add_argument('--id', help='run id', default = 'Israel_SARS_CoV-2')
     args = parser.parse_args()
+    # This generates the XML used for the preprint, in which we tried to estimate
+    # the import rate using an exponential ditribution
+    # also assumes import rate changes to 25% of original value
+    # past this date (airport closures, etc. )
+    run_id = 'new'
+    subprocess.run(shlex.split())
+    args.xmlTemplate = 'config/SEIR_TEMPLATE.xml'
+    args.importChangeDate = 2020.2185792349726
+    args.importChange = 0.25
+    args.importM = 10
+    for ph in [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.20]:
+        args.ph = ph
+        args.base_path = '{0}/{0}_{1}'.format(run_id, ph)
+        args.out_name = '{0}_{1}'.format(run_id, ph)
+        subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
+        args = process_fasta(args)
+        gx.generate_xml(args)
+        print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
     # This generates the XMLs used for journal submission
     run_id = 'june3_fix_import'
     args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
-    subprocess.run(shlex.split('mkdir {0}'.format(run_id)))
+    subprocess.run(shlex.split(f'mkdir {0}'.format(run_id)))
     for ph in [0.02, 0.05, 0.1, 0.2, 0.5, 0.80]:
         for eta in [10, 100, 1000, 2500, 5000]:
             args.importRate = eta
-            args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
             args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
             args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
             subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
@@ -147,7 +164,7 @@ if __name__ == "__main__":
             args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
             args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
             args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
-            subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
+            subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
             args = process_fasta(args)
             gx.generate_xml(args)
             print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
@@ -164,7 +181,7 @@ if (t > 2020.0511430148003) then (exp(56.88733590996238*(t-2020.0511430148003)))
         args.xmlTemplate = '../../config/SEIR_TEMPLATE_IMPORTDEF.xml'
         args.base_path = '{0}/{0}_{1}'.format(run_id, ph)
         args.out_name = '{0}_{1}'.format(run_id, ph)
-        subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
+        subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
         args = process_fasta(args)
         gx.generate_xml(args)
         print('SGE_Batch -c "beast -threads 3 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))

@@ -50,9 +50,17 @@ def generate_xml(args):
                                 str(args.exogInitM))
     template = template.replace('<!-- EXOG_GROWTH_RATE -->',
                                 str(args.exogGR))
+    # if we have a constant import rate
     template = template.replace('<!-- IMPORT_RATE -->',
                                 str(args.importRate))
-
+    # if we're trying to fit the import rate using an exponential distribution
+    # also assuming import rate changes at a certain date
+    template = template.replace('<!-- IMPORT_CHANGE_DATE -->', 
+        str(args.importChangeDate))
+    template = template.replace('<!-- IMPORT_CHANGE -->', 
+        str(args.importChange))
+    template = template.replace('<!-- IMPORT_RATE_M -->', 
+        str(args.importM))
     if args.R0ChangeDate == 'NA':
         # todo make this...better?
         R0ChangeDate_operator = '''<operator id="seir.a.operator.t:{0}" \
