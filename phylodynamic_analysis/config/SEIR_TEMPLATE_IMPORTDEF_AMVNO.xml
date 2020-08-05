@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+<data
+id="SEIR_TEMPLATE"
+spec="Alignment"
+name="alignment">
+<!-- SEQUENCE_BLOCK -->
+</data>
+
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+<run id="mcmc" spec="MCMC" chainLength="10000000" preBurnin="0" storeEvery="1000">
+    <state id="state" spec="State" storeEvery="1000">
+        <tree id="Tree.t:SEIR_TEMPLATE" spec="beast.evolution.tree.Tree" name="stateNode">
+            <trait id="dateTrait.t:SEIR_TEMPLATE" spec="beast.evolution.tree.TraitSet" traitname="date" value= <!-- TIME_BLOCK --> >
+                <taxa id="TaxonSet.SEIR_TEMPLATE" spec="TaxonSet">
+                    <alignment idref="SEIR_TEMPLATE"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.SEIR_TEMPLATE"/>
+        </tree>
+        <!-- Initial values -->
+        <parameter id="clockRate.c:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="5.0E-4" name="stateNode" upper="0.002">0.0018</parameter>
+        <parameter id="kappa.s:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="gammaShape.s:SEIR_TEMPLATE" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="seir.R0.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="1.0" name="stateNode">5</parameter>
+        <parameter id="seir.a.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" upper="2.0" name="stateNode">1</parameter>
+        <parameter id="seir.exog.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="seir.E.t:SEIR_TEMPLATE" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="freqParameter.s:SEIR_TEMPLATE" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+    </state>
+
+    <!-- Maximum likelihood starting tree from IQTree -->
+    <init id="NewickTree.t:SEIR_TEMPLATE" spec="beast.util.TreeParser" estimate="false" initial="@Tree.t:SEIR_TEMPLATE" newick=<!-- TREE_BLOCK --> />
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="PhydynSEIR.t:SEIR_TEMPLATE" spec="phydyn.distribution.STreeLikelihoodODE" equations="QL" useStateName='true' forgiveAgtY='1.0' minP="0.01">
+                <popmodel id="pdseirmodel.t:SEIR_TEMPLATE" spec="phydyn.model.PopModelODE">
+
+                    <!-- SEIR MODEL (assume dynamics begin on SIR_T0) -->
+                    <matrixeq id="MatrixEquation.0" spec="phydyn.model.MatrixEquation" destination="Il" origin="E" type="migration">
+                      if ( t > <!-- SIR_T0 --> ) then (gamma0*E*(1-p_h)) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.1" spec="phydyn.model.MatrixEquation" destination="Ih" origin="E" type="migration">
+                      if ( t > <!-- SIR_T0 --> ) then (gamma0*E*p_h) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.2" spec="phydyn.model.MatrixEquation" destination="E" origin="Il" type="birth">
+                      (beta*Il*S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.3" spec="phydyn.model.MatrixEquation" destination="E" origin="Ih" type="birth">
+                      (beta*Ih*tau * S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.4" spec="phydyn.model.MatrixEquation" origin="Il" type="death">
+                      if ( t > <!-- SIR_T0 --> ) then (gamma1*Il) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.5" spec="phydyn.model.MatrixEquation" origin="Ih" type="death">
+                      if ( t > <!-- SIR_T0 --> ) then (gamma1*Ih) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.6" spec="phydyn.model.MatrixEquation" origin="R" type="nondeme">
+                      if ( t > <!-- SIR_T0 --> ) then (gamma1*(Il + Ih)) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.7" spec="phydyn.model.MatrixEquation" origin="S" type="nondeme">
+                      (-beta*(Ih*tau+Il) * S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.8" spec="phydyn.model.MatrixEquation" origin="infections" type="nondeme">
+                      (beta*(Ih*tau+Il) * S / N)
+                    </matrixeq>
+
+                    <matrixeq id="MatrixEquation.13" spec="phydyn.model.MatrixEquation" destination="E" origin="exog" type="migration">
+                      (importRate)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.14" spec="phydyn.model.MatrixEquation" destination="exog" origin="E" type="migration">
+                      (importRate)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.17" spec="phydyn.model.MatrixEquation" origin="migrations" type="nondeme">
+                      (importRate)
+                    </matrixeq>
+
+                    <!-- Growth of exog -->
+                    <matrixeq id="MatrixEquation.15" spec="phydyn.model.MatrixEquation" destination="exog" origin="exog" type="birth">
+                      (betaExog * exog)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.16" spec="phydyn.model.MatrixEquation" origin="exog" type="death">
+                      (gammaExog * exog)
+                    </matrixeq>
+
+                  <definition id="Definition.0" spec="phydyn.model.Definition" value=" N = S + Il + Ih + E + R  "/>
+                  <definition id="Definition.1" spec="phydyn.model.Definition"
+                      value=" beta = if (t > <!-- R0_CHANGE -->) then max(0.0, a*(R0*gamma1)/((1-p_h)+tau*p_h)) else
+                                     if (t > <!-- SIR_T0 -->) then max(0.0, (R0*gamma1)/((1-p_h)+tau*p_h)) else 0.0 "/>
+                    <definition id="Definition.2" spec="phydyn.model.Definition" value=" betaExog =  gammaExog + exogGrowthRate "/>
+                     <definition id="Definition.3" spec="phydyn.model.Definition" 
+                        value=" importRate =  <!-- IMPORT_RATE -->"/> 
+
+                    <popParams id="initValues" spec="phydyn.model.TrajectoryParameters" integrationSteps="500">
+                        <!-- Fixed parameters -->
+                        <!-- start of simulation -->
+                        <parameter id="seir.t0.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="t0"><!-- T0 --></parameter>
+                        <!-- Size of susceptible population -->
+                        <initialValue id="seir.S.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="S">
+                            <parameter id="seir.S.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue"><!-- S --></parameter>
+                        </initialValue>
+                        <!-- Initial number of I_low individuals (effectively 0) -->
+                        <initialValue id="seir.Il.pv.t:SEIR_TEMPLATEl" spec="phydyn.model.ParamValue" pname="Il">
+                            <parameter id="seir.Il.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">1.0E-8</parameter>
+                        </initialValue>
+                        <!-- Initial number of I_high individuals (effectively 0) -->
+                        <initialValue id="seir.Ih.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="Ih">
+                            <parameter id="seir.Ih.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">1.0E-8</parameter>
+                        </initialValue>
+                        <!-- Initial number of recovered individuals (0) -->
+                        <initialValue id="seir.R.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="R">
+                            <parameter id="seir.R.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+
+                        <!-- Initial number of infections -->
+                        <initialValue id="seir.infections.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="infections">
+                            <parameter id="seir.infections.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+                        <!-- Initial number of migrations -->
+                        <initialValue id="seir.migrations.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="migrations">
+                            <parameter id="seir.migrations.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+
+                        <!-- Estimated parameters -->
+                        <!-- Initial number of exposed -->
+                        <initialValue id="seir.E.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="E" pvalue="@seir.E.t:SEIR_TEMPLATE"/>
+                        <!-- Initial size of exog -->
+                        <initialValue id="seir.exog.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="exog" pvalue="@seir.exog.t:SEIR_TEMPLATE"/>
+
+
+                    </popParams>
+                    <modelParams id="rates" spec="phydyn.model.ModelParameters">
+                        <!-- Fixed parameters -->
+                        <!-- LATENT period -->
+                        <param id="seir.gamma0.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="gamma0">
+                            <parameter id="seir.gamma0.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="pvalue"><!-- LATENT_PERIOD --></parameter>
+                        </param>
+                        <!-- Duration of infectiousness -->
+                        <param id="seir.gamma1.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="gamma1">
+                            <parameter id="seir.gamma1.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="pvalue"><!-- INF_PERIOD --></parameter>
+                        </param>
+                        <!-- Duration of being infected for exog (E + Il/Ih) -->
+                        <param id="seir.gammaExog.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="gammaExog">
+                            <parameter id="seir.gammaExog.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="pvalue"><!-- EXOG_PERIOD --></parameter>
+                        </param>
+                        <!-- Proportion of I_high -->
+                        <param id="seir.p_h.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" names="p_h">
+                            <parameter id="seir.p_h.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="values"><!-- PH --></parameter>
+                        </param>
+                        <param id="seir.tau.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" names="tau">
+                            <parameter id="seir.tau.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="values"><!-- TAU --></parameter>
+                        </param>
+                        <!-- Growth rate of exog -->
+                        <param id="seir.exogGrowthRate.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" names="exogGrowthRate">
+                            <parameter id="seir.exogGrowthRate.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="values"><!-- EXOG_GROWTH_RATE --></parameter>
+                        </param>
+
+                        <!-- Fitted parameters -->
+                        <!-- R0 -->
+                        <param id="seir.R0.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="R0" pvalue="@seir.R0.t:SEIR_TEMPLATE"/>
+                        <param id="seir.a.pv.t:SEIR_TEMPLATE" spec="phydyn.model.ParamValue" pname="a" pvalue="@seir.a.t:SEIR_TEMPLATE"/>
+                    </modelParams>
+                </popmodel>
+
+                <parameter id="seir.Ne.t:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="Ne">0.1</parameter>
+                <treeIntervals id="STreeIntervals.t:SEIR_TEMPLATE" spec="STreeIntervals" tree="@Tree.t:SEIR_TEMPLATE"/>
+            </distribution>
+            <prior id="ClockPrior.c:SEIR_TEMPLATE" name="distribution" x="@clockRate.c:SEIR_TEMPLATE">
+                <Uniform id="Uniform.8" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="FrequenciesPrior.s:SEIR_TEMPLATE" name="distribution" x="@freqParameter.s:SEIR_TEMPLATE">
+                <Uniform id="Uniform.3" name="distr"/>
+            </prior>
+            <prior id="KappaPrior.s:SEIR_TEMPLATE" name="distribution" x="@kappa.s:SEIR_TEMPLATE">
+                <LogNormal id="LogNormalDistributionModel.01" name="distr">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <prior id="GammaShapePrior.s:SEIR_TEMPLATE" name="distribution" x="@gammaShape.s:SEIR_TEMPLATE">
+              <Exponential id="Exponential.0" name="distr">
+                  <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+              </Exponential>
+            </prior>
+
+            <prior id="seir.E.prior.t:SEIR_TEMPLATE" name="distribution" x="@seir.E.t:SEIR_TEMPLATE">
+                <Exponential id="Exponential.2" name="distr">
+                    <parameter id="RealParameter.20" spec="parameter.RealParameter" lower="0.0" name="mean" ><!-- EM --></parameter>
+                </Exponential>
+            </prior>
+
+            <prior id="seir.R0.prior.t:SEIR_TEMPLATE" name="distribution" x="@seir.R0.t:SEIR_TEMPLATE">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.18" spec="parameter.RealParameter" estimate="false" name="M"><!-- R0M --></parameter>
+                    <parameter id="RealParameter.28" spec="parameter.RealParameter" estimate="false" name="S"><!-- R0S --></parameter>
+                </LogNormal>
+            </prior>
+
+            <prior id="seir.a.prior.t:SEIR_TEMPLATE" name="distribution" x="@seir.a.t:SEIR_TEMPLATE">
+                <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+            </prior>
+
+            <prior id="seir.exog.prior.t:SEIR_TEMPLATE" name="distribution" x="@seir.exog.t:SEIR_TEMPLATE">
+                <Exponential id="Exponential.25" name="distr">
+                    <parameter id="RealParameter.30" spec="parameter.RealParameter" name="mean" ><!-- EXOG_INIT_M --></parameter>
+                </Exponential>
+            </prior>
+        </distribution>
+
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.SEIR_TEMPLATE" spec="ThreadedTreeLikelihood" data="@SEIR_TEMPLATE" tree="@Tree.t:SEIR_TEMPLATE">
+                <siteModel id="SiteModel.s:SEIR_TEMPLATE" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:SEIR_TEMPLATE">
+                    <parameter id="mutationRate.s:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="proportionInvariant.s:SEIR_TEMPLATE" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:SEIR_TEMPLATE" spec="HKY" kappa="@kappa.s:SEIR_TEMPLATE">
+                        <frequencies id="estimatedFreqs.s:SEIR_TEMPLATE" spec="Frequencies" frequencies="@freqParameter.s:SEIR_TEMPLATE"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:SEIR_TEMPLATE" spec="beast.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:SEIR_TEMPLATE"/>
+            </distribution>
+
+        </distribution>
+    </distribution>
+
+    <!-- Substitution model operators -->
+    <operator id="StrictClockRateScaler.c:SEIR_TEMPLATE" spec="ScaleOperator" parameter="@clockRate.c:SEIR_TEMPLATE" scaleFactor="0.75" weight="3.0"/>
+    <operator id="strictClockUpDownOperator.c:SEIR_TEMPLATE" spec="UpDownOperator" scaleFactor="0.4" weight="3.0">
+        <up idref="clockRate.c:SEIR_TEMPLATE"/>
+        <down idref="Tree.t:SEIR_TEMPLATE"/>
+    </operator>
+    <operator id="KappaScaler.s:SEIR_TEMPLATE" spec="ScaleOperator" parameter="@kappa.s:SEIR_TEMPLATE" scaleFactor="0.5" weight="0.1"/>
+    <operator id="gammaShapeScaler.s:SEIR_TEMPLATE" spec="ScaleOperator" parameter="@gammaShape.s:SEIR_TEMPLATE" scaleFactor="0.5" weight="0.1"/>
+    <operator id="FrequenciesExchanger.s:SEIR_TEMPLATE" spec="DeltaExchangeOperator" delta="0.01" weight="0.2">
+        <parameter idref="freqParameter.s:SEIR_TEMPLATE"/>
+    </operator>
+
+    <!-- SEIR model operators -->
+    <operator id="PhydynSEIRTreeScaler.t:SEIR_TEMPLATE" spec="ScaleOperator" scaleFactor="0.8" tree="@Tree.t:SEIR_TEMPLATE" weight="3.0"/>
+    <operator id="PhydynSEIRTreeRootScaler.t:SEIR_TEMPLATE" spec="ScaleOperator" rootOnly="true" scaleFactor="0.7" tree="@Tree.t:SEIR_TEMPLATE" weight="3.0"/>
+    <operator id="PhydynSEIRUniformOperator.t:SEIR_TEMPLATE" spec="Uniform" tree="@Tree.t:SEIR_TEMPLATE" weight="30.0"/>
+    <operator id="PhydynSEIRSubtreeSlide.t:SEIR_TEMPLATE" spec="SubtreeSlide" tree="@Tree.t:SEIR_TEMPLATE" weight="15.0" size="0.8"/>
+    <operator id="PhydynSEIRNarrow.t:SEIR_TEMPLATE" spec="Exchange" tree="@Tree.t:SEIR_TEMPLATE" weight="15.0"/>
+    <operator id="PhydynSEIRWide.t:SEIR_TEMPLATE" spec="Exchange" isNarrow="false" tree="@Tree.t:SEIR_TEMPLATE" weight="3.0"/>
+    <operator id="PhydynSEIRWilsonBalding.t:SEIR_TEMPLATE" spec="WilsonBalding" tree="@Tree.t:SEIR_TEMPLATE" weight="3.0"/>
+
+    <!-- Epi parameter operators -->
+    <operator id="SEIR:SEIR_TEMPLATE" spec="beast.evolution.operators.AdaptableVarianceMultivariateNormalOperator" beta="0.05" coefficient="1.0" burnin="2500" initial="5000" weight="11.0">
+        <transformations id="LogTransform:SEIR_TEMPLATE" spec="beast.util.Transform$LogTransform">
+            <f idref="seir.R0.t:SEIR_TEMPLATE"/>
+            <f idref="seir.a.t:SEIR_TEMPLATE"/>
+            <f idref="seir.exog.t:SEIR_TEMPLATE"/>
+            <f idref="seir.E.t:SEIR_TEMPLATE"/>
+        </transformations>
+    </operator>
+
+
+    <logger id="tracelog" spec="Logger" fileName="SEIR_TEMPLATE.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.SEIR_TEMPLATE"/>
+        <log id="TreeHeight.t:SEIR_TEMPLATE" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:SEIR_TEMPLATE"/>
+        <log idref="clockRate.c:SEIR_TEMPLATE"/>
+        <log idref="kappa.s:SEIR_TEMPLATE"/>
+        <log idref="gammaShape.s:SEIR_TEMPLATE"/>
+        <log idref="PhydynSEIR.t:SEIR_TEMPLATE"/>
+        <log idref="seir.R0.t:SEIR_TEMPLATE"/>
+        <log idref="seir.a.t:SEIR_TEMPLATE"/>
+        <log idref="seir.exog.t:SEIR_TEMPLATE"/>
+        <log idref="seir.E.t:SEIR_TEMPLATE"/>
+        <log idref="freqParameter.s:SEIR_TEMPLATE"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="10000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="PhydynSEIR.t:SEIR_TEMPLATE"/>
+    </logger>
+
+    <logger id="treelog.t:SEIR_TEMPLATE" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:SEIR_TEMPLATE" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:SEIR_TEMPLATE"/>
+    </logger>
+
+    <logger id="popTrajLog" spec="Logger" fileName="seir.SEIR_TEMPLATE.traj" logEvery="1000">
+        <log id="trajectoryLogger" spec="phydyn.loggers.TrajectoryLogger" pointFrequency="1" popModel="@pdseirmodel.t:SEIR_TEMPLATE"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>
