@@ -2,6 +2,7 @@
 import os
 import math
 import pandas as pd
+from pandas.api.types import CategoricalDtype
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import matplotlib.gridspec as gridspec
@@ -196,21 +197,21 @@ def process_results(args):
                                      (state_prob['eta'] + state_prob['beta']*\
                                            (state_prob['S']/N)*\
                                            (state_prob['Il']+tau*state_prob['Ih']))
+        eta = state_prob[['t', 'eta']]
+        eta = pd.DataFrame(state_prob.groupby('t')['eta'].apply(hpd, args.qs).to_list(), 
+                     columns=args.qs)
+        eta.index = traj['t'][0:len(eta)]
+        results['eta'] = eta
     else: 
         state_prob['E_state_prob'] = args.eta/\
                                (args.eta + state_prob['beta']*\
                                            (state_prob['S']/N)*\
                                            (state_prob['Il']+tau*state_prob['Ih']))
-    eta = state_prob[['t', 'eta']]
-    eta = pd.DataFrame(state_prob.groupby('t')['eta'].apply(hpd, args.qs).to_list(), 
-                 columns=args.qs)
-    eta.index = traj['t'][0:len(eta)]
     state_prob = state_prob[['t', 'E_state_prob']]
     state_prob = pd.DataFrame(state_prob.groupby('t')['E_state_prob'].apply(hpd, args.qs).to_list(), 
                  columns=args.qs)
     state_prob.index = traj['t'][0:len(state_prob)]
     results['E_state_prob_HPD'] = state_prob
-    results['eta'] = eta
     return(results)
 
 
@@ -292,6 +293,9 @@ def plot_ph_sensitivity(args, data, params, eta, israel_reported_data):
         key_name = key.replace('_HPD', '')
         key_name = key_name.replace('_cum', '')
         dat = data[key][data[key]['eta'] == eta]
+        cat_type = CategoricalDtype(categories=args.phs,
+            ordered=True)
+        dat['ph'] = dat['ph'].astype(cat_type)
         # logging the data so that density is calculated on the log scale
         if params[key]['y_scale_log']:
             dat[key_name] = np.log10(dat[key_name])
@@ -330,10 +334,13 @@ def plot_ph_eta_sensitivity(args, data, params, israel_reported_data):
             key_name = key.replace('_HPD', '')
             key_name = key_name.replace('_cum', '')
             dat = data[key][data[key]['eta'] == eta]
+            cat_type = CategoricalDtype(categories=args.phs,
+            ordered=True)
+            dat['ph'] = dat['ph'].astype(cat_type)
             # logging the data so that density is calculated on the log scale
             if params[key]['y_scale_log']:
                 dat[key_name] = np.log10(dat[key_name])
-            sns.violinplot(x='ph', y=key_name, data=dat, 
+            sns.violinplot(x='ph', y=key_name, data=dat, order=args.phs,
                            ax=axs[i][j], saturation=1, cut=0, 
                            palette=plot_style.ph_col_dict)
             axs[i][j].set_ylim(params[key]['y_lim'])
@@ -375,16 +382,17 @@ def plot_state_probs(args, data, ph_s, etas):
     for j, eta in enumerate(etas):
         # i is row
         for i, ph in enumerate(ph_s):
-            dat = data[(ph, eta)]['E_state_prob_HPD']
-            axs.flat[i*n_col+j].plot(dat.index,
-                           dat[0.5],
-                           linewidth=3,
-                           color=plot_style.ph_col_dict[0.02])
-            axs.flat[i*n_col+j].fill_between(dat.index,
-                                   dat[0.025],
-                                   dat[0.975], 
-                                   color=plot_style.ph_col_dict[0.02],
-                                   alpha=0.25)
+            if (ph, eta) not in exclude_runs:
+                dat = data[(ph, eta)]['E_state_prob_HPD']
+                axs.flat[i*n_col+j].plot(dat.index,
+                               dat[0.5],
+                               linewidth=3,
+                               color=plot_style.ph_col_dict[0.02])
+                axs.flat[i*n_col+j].fill_between(dat.index,
+                                       dat[0.025],
+                                       dat[0.975], 
+                                       color=plot_style.ph_col_dict[0.02],
+                                       alpha=0.25)
             if args.empirical:
                 axs.flat[i*n_col+j].set_title("$\Theta$ = {0}, $p_h$ = {1}%".format(eta, round(ph*100)))
             else:
@@ -409,17 +417,21 @@ def make_table(args, rows, data, ph_s, etas):
         table.insert(0, ['Parameter', 'Prior']) 
         for ph in ph_s:
             table[0].append(f'p_h={ph}')
-            for i, key in enumerate(rows.keys()):
-                dat = data[(ph, eta)][f'{key}_HPD']
-                if rows[key]['sci']:
-                    median = "{:.{}e}".format(dat.median(), rows[key]['decimals'])
-                    low_limit = "{:.{}e}".format(min(dat), rows[key]['decimals'])
-                    high_limit = "{:.{}e}".format(max(dat), rows[key]['decimals'])
-                else:
-                    median = "{:.{}f}".format(dat.median(), rows[key]['decimals'])
-                    low_limit = "{:.{}f}".format(min(dat), rows[key]['decimals'])
-                    high_limit = "{:.{}f}".format(max(dat), rows[key]['decimals'])
-                table[i+1].append(f'{median} ({low_limit} {high_limit})')
+            if (ph, eta) not in exclude_runs:
+                for i, key in enumerate(rows.keys()):
+                    dat = data[(ph, eta)][f'{key}_HPD']
+                    if rows[key]['sci']:
+                        median = "{:.{}e}".format(dat.median(), rows[key]['decimals'])
+                        low_limit = "{:.{}e}".format(min(dat), rows[key]['decimals'])
+                        high_limit = "{:.{}e}".format(max(dat), rows[key]['decimals'])
+                    else:
+                        median = "{:.{}f}".format(dat.median(), rows[key]['decimals'])
+                        low_limit = "{:.{}f}".format(min(dat), rows[key]['decimals'])
+                        high_limit = "{:.{}f}".format(max(dat), rows[key]['decimals'])
+                    table[i+1].append(f'{median} ({low_limit} {high_limit})')
+            else:
+                for i, key in enumerate(rows.keys()):
+                    table[i+1].append('')
         with open(f'tables/{args.plot_name}_{eta}.csv', 'w') as outfile:
             writer = csv.writer(outfile)
             writer.writerows(table)
@@ -445,26 +457,27 @@ def process_results_main(args):
     for ph in args.phs:
         for eta in args.etas: 
             print(ph, eta)
-            args.ph = ph
-            args.eta = eta
-            if args.empirical == True:
-                args.theta = eta
-                args.peakImport = np.exp(args.theta*args.importR*(args.peakImportDate-args.importT0))
-            args.log = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.log'.\
-                            format(args.run_id, args.ph, args.eta)
-            args.traj =  'data/{0}/{0}_{1}_{2}/seir.{0}_{1}_{2}.traj'.\
-                            format(args.run_id, args.ph, args.eta)
-            args.plot_name = '{0}_{1}_{2}'.format(args.run_id, ph, eta)
-            results = process_results(args)
-            all_results[(ph, eta)] = results
-            for violin in args.violin_data_keys:
-                dat = pd.DataFrame(results[violin])
-                dat['ph'] = ph
-                dat['eta'] = eta
-                if violin in violin_data.keys():
-                    violin_data[violin] = violin_data[violin].append(dat)
-                else:
-                    violin_data[violin] = dat
+            if (ph, eta) not in exclude_runs:
+                args.ph = ph
+                args.eta = eta
+                if args.empirical == True:
+                    args.theta = eta
+                    args.peakImport = np.exp(args.theta*args.importR*(args.peakImportDate-args.importT0))
+                args.log = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.log'.\
+                                format(args.run_id, args.ph, args.eta)
+                args.traj =  'data/{0}/{0}_{1}_{2}/seir.{0}_{1}_{2}.traj'.\
+                                format(args.run_id, args.ph, args.eta)
+                args.plot_name = '{0}_{1}_{2}'.format(args.run_id, ph, eta)
+                results = process_results(args)
+                all_results[(ph, eta)] = results
+                for violin in args.violin_data_keys:
+                    dat = pd.DataFrame(results[violin])
+                    dat['ph'] = ph
+                    dat['eta'] = eta
+                    if violin in violin_data.keys():
+                        violin_data[violin] = violin_data[violin].append(dat)
+                    else:
+                        violin_data[violin] = dat
     return(all_results, violin_data)
 
 
@@ -580,27 +593,25 @@ def main():
                          'decimals':        2,
                          'sci':             True,
                          'prior':           'Exponential(M=1.0)'}}
-    # Processes results using a constant import rate
+    # Results using a constant import rate
     args.phs = [0.02, 0.05, 0.10, 0.20, 0.50, 0.80]
     args.etas = [10, 100, 1000, 2500, 5000]
+    args.empirical = False
+    exclude_runs = []
     args.violin_data_keys = ['seir.R0_HPD', 'seir.a_HPD', 'R_cum_HPD']
     args.run_id = 'june11_CMCMC_Final'
     all_results, violin_data = process_results_main(args)
+
     with open("{0}_all_results.pkl".format(args.run_id), "wb") as outfile:
             pickle.dump(all_results, outfile)
     with open("{0}_violin_data.pkl".format(args.run_id), "wb") as outfile:
             pickle.dump(violin_data, outfile)
-    all_results = pickle.load(open('{0}_all_results.pkl'.format(args.run_id), 'rb'))
-    violin_data = pickle.load(open('{0}_violin_data.pkl'.format(args.run_id), 'rb'))
     args.plot_name = 'june11_CMCMC_Final'
     israel_reported_data = process_reported_data('data/ecdc_reported.csv',
                                                  max(all_results[list(
                                                     all_results.keys())[0]]['Il_traj_HPD'].index))
-    plot_ph_sensitivity(args, violin_data, plot_params, args.etas[2], israel_reported_data)
     plot_ph_eta_sensitivity(args, violin_data, plot_params, israel_reported_data)
     plot_state_probs(args, all_results, args.phs, args.etas)
-    ph_s = [0.02, 0.05, 0.10]
-    plot_traj_combined(args, all_results, ph_s, args.etas[2], israel_reported_data)
     make_table(args, table_rows, all_results, args.phs, args.etas)
     # Using empiricial estimates of the import rate
     args.run_id = 'july22_TMRCA_Import_Final'
@@ -614,34 +625,21 @@ def main():
     args.phs = [0.02, 0.05, 0.10, 0.20, 0.50, 0.80]
     args.etas = [0.8, 0.9, 1.0, 1.1, 1.2]
     args.violin_data_keys = ['seir.R0_HPD', 'seir.a_HPD', 'R_cum_HPD']
+    exclude_runs = [(0.02, 0.8)]
     all_results, violin_data = process_results_main(args)
-    # excluding these parameter values because the mixing is very poor
-    for key in violin_data.keys():
-        col_name = key.split('_')[0]
-        violin_data[key].loc[(violin_data[key]['ph'] == 0.02) & 
-            (violin_data[key]['eta'] == 0.8), col_name] = np.nan
-        violin_data[key].loc[(violin_data[key]['ph'] == 0.1) & 
-            (violin_data[key]['eta'] == 0.9), col_name] = np.nan
-    all_results[(0.02, 0.8)]['E_state_prob_HPD'][0.025] = np.nan
-    all_results[(0.02, 0.8)]['E_state_prob_HPD'][0.5] = np.nan
-    all_results[(0.02, 0.8)]['E_state_prob_HPD'][0.975] = np.nan
-    all_results[(0.1, 0.9)]['E_state_prob_HPD'][0.025] = np.nan
-    all_results[(0.1, 0.9)]['E_state_prob_HPD'][0.5] = np.nan
-    all_results[(0.1, 0.9)]['E_state_prob_HPD'][0.975] = np.nan
     # saves processed data
     with open("{0}_all_results.pkl".format(args.run_id), "wb") as outfile:
             pickle.dump(all_results, outfile)
+
     with open("{0}_violin_data.pkl".format(args.run_id), "wb") as outfile:
             pickle.dump(violin_data, outfile)
-    all_results = pickle.load(open('{0}_all_results.pkl'.format(args.run_id), 'rb'))
-    violin_data = pickle.load(open('{0}_violin_data.pkl'.format(args.run_id), 'rb'))
     args.plot_name = 'july22_TMRCA_Import_Final'
-    israel_reported_data = process_reported_data('data/mecdc_reported.csv',
+    israel_reported_data = process_reported_data('data/ecdc_reported.csv',
                                                  max(all_results[list(
                                                     all_results.keys())[0]]['Il_traj_HPD'].index))
-    plot_ph_sensitivity(args, violin_data, plot_params, args.etas[2], israel_reported_data)
+    plot_ph_sensitivity(args, violin_data, plot_params, 1.0, israel_reported_data)
     ph_s = [0.02, 0.05, 0.10]
-    plot_traj_combined(args, all_results, ph_s, args.etas[2], israel_reported_data)
+    plot_traj_combined(args, all_results, ph_s, 1.0, israel_reported_data)
     plot_ph_eta_sensitivity(args, violin_data, plot_params, israel_reported_data)
     plot_state_probs(args, all_results, args.phs, args.etas)
     make_table(args, table_rows, all_results, args.phs, args.etas)
