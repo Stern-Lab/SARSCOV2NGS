@@ -21,4 +21,6 @@ Other priors (for the results in the final manuscript) include:
 
 Results were visualized using [Matplotlib](https://matplotlib.org) and [Baltic](https://github.com/evogytis/baltic) using the scripts/combine_plot_traj.py file. MCC trees were generated using [TreeAnnotator](https://github.com/CompEvol/beast2). 
 
+Please note that the sequence with ID Israel/SH16/2020 in our study has ID Israel/13075879/2020 on GISAID (EPI_ISL_447443). We apologize for any confusion this may have caused. 
+
 
