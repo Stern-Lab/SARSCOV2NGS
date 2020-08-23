@@ -2,8 +2,10 @@
 import os
 import math
 import pandas as pd
+from pandas.api.types import CategoricalDtype
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import matplotlib.gridspec as gridspec
 import numpy as np
 import argparse
 import subprocess
@@ -11,26 +13,10 @@ import shlex
 import seaborn as sns
 from calendar import isleap
 import string
-import sars_cov2_plotting_style as plot_style
+from scripts import sars_cov2_plotting_style as plot_style
 import baltic as bt
 import pickle
 import csv
-
-
-# Combines beast logs
-# Not currently using this code at all
-def combine_runs(run_ids, args):
-    combine_tree_str = ''
-    combine_log_str = ''
-    for run_id in run_ids:
-        combine_tree_str += '-log {0}.trees '.format(run_id)
-        combine_log_str += '-log {0}.log'.format(run_id)
-    tree_logcombiner_cmd = 'logcombiner -b {0} -o {1} {2}'.format(
-        args.burnin, args.base_path+'.tree', combine_tree_str)
-    subprocess.run(shlex.split(tree_logcombiner_cmd))
-    log_logcombiner_cmd = 'logcombiner -b {0} -o {1} {2}'.format(
-        args.burnin, args.base_path+'.combined.log', combine_log_str)
-    subprocess.run(shlex.split(log_logcombiner_cmd))
 
 
 # Creates MCC tree from combined tree
@@ -158,7 +144,7 @@ def hpd(dat, qs):
     hpd_interval = (dat.iloc[min_idx], dat.iloc[min_idx+interval_idx_inc])
     dat_hpd = dat[dat.between(hpd_interval[0],
                               hpd_interval[1])]
-    dat_mid = dat_hpd.quantile(args.qs[1])
+    dat_mid = dat_hpd.quantile(qs[1])
     return((hpd_interval[0], dat_mid, hpd_interval[1]))
 
 
@@ -171,7 +157,7 @@ def hpd(dat, qs):
 def process_results(args):
     results = {}
     log = pd.read_csv(args.log, sep="\t", comment="#")
-    plot_trace(log, args)
+    #plot_trace(log, args)
     log = log[log['Sample']>=max(log['Sample'])*args.burnin]
     for d in log.columns[1:]:   # excludes sample column
         results[d] = log[d]
@@ -200,10 +186,27 @@ def process_results(args):
         state_prob.loc[state_prob['t'] > args.R0ChangeDate, 'beta']
     state_prob.loc[state_prob['t'] <= args.sirT0, 'beta'] = 0
     N = max(traj['S'])
-    state_prob['E_state_prob'] = args.eta/\
-                           (args.eta + state_prob['beta']*\
-                                       (state_prob['S']/N)*\
-                                       (state_prob['Il']+tau*state_prob['Ih']))
+    if args.empirical: 
+        state_prob['eta'] = 0
+        state_prob.loc[state_prob['t'] > args.peakImportDate, 'eta'] = \
+            (args.peakImport*np.exp(args.theta*args.importS*(state_prob['t']-args.peakImportDate)))
+        state_prob.loc[(args.importT0 < state_prob['t']) & 
+                       (args.peakImportDate >= state_prob['t']) , 'eta'] = \
+            (np.exp(args.theta*args.importR*(state_prob['t']-args.importT0)))
+        state_prob['E_state_prob'] = state_prob['eta']/\
+                                     (state_prob['eta'] + state_prob['beta']*\
+                                           (state_prob['S']/N)*\
+                                           (state_prob['Il']+tau*state_prob['Ih']))
+        eta = state_prob[['t', 'eta']]
+        eta = pd.DataFrame(state_prob.groupby('t')['eta'].apply(hpd, args.qs).to_list(), 
+                     columns=args.qs)
+        eta.index = traj['t'][0:len(eta)]
+        results['eta'] = eta
+    else: 
+        state_prob['E_state_prob'] = args.eta/\
+                               (args.eta + state_prob['beta']*\
+                                           (state_prob['S']/N)*\
+                                           (state_prob['Il']+tau*state_prob['Ih']))
     state_prob = state_prob[['t', 'E_state_prob']]
     state_prob = pd.DataFrame(state_prob.groupby('t')['E_state_prob'].apply(hpd, args.qs).to_list(), 
                  columns=args.qs)
@@ -277,20 +280,22 @@ def plot_traj_combined(args, all_results, ph_s, eta, israel_reported_data):
                        2020+(31+29+31+1-0.5)/366, 2020+(31+29+31+31+1-0.5)/366))
         ax.set_xticklabels(('Feb.', 'March', 'April', 'May'))
         ax.text(-0.15, 1, string.ascii_uppercase[i], color=plot_style.polar_night[0],
-                size=24, transform=ax.transAxes, fontweight='bold')
+                size=24, transform=ax.transAxes)
     fig.savefig('figures/'+args.plot_name+'_traj_combined.pdf')
     plt.close(fig)
 
 
 # Plots epi parameters across a range of p_h values
 def plot_ph_sensitivity(args, data, params, eta, israel_reported_data):
-    fig, axs = plt.subplots(1, len(params.keys()), 
-                            figsize=(6.4*len(params.keys()), 4.8),
+    fig, axs = plt.subplots(1, len(params.keys()), figsize=(6.4*len(params.keys()), 4.8),
                             constrained_layout=True)
     for i, key in enumerate(params.keys()):
         key_name = key.replace('_HPD', '')
         key_name = key_name.replace('_cum', '')
         dat = data[key][data[key]['eta'] == eta]
+        cat_type = CategoricalDtype(categories=args.phs,
+            ordered=True)
+        dat['ph'] = dat['ph'].astype(cat_type)
         # logging the data so that density is calculated on the log scale
         if params[key]['y_scale_log']:
             dat[key_name] = np.log10(dat[key_name])
@@ -300,11 +305,13 @@ def plot_ph_sensitivity(args, data, params, eta, israel_reported_data):
         axs[i].set_ylabel(params[key]['y_label'])
         axs[i].set_ylim(params[key]['y_lim'])
         axs[i].set_xlabel("$p_h$ (%)")
+        if 'y_ticks' in params[key].keys():
+            axs[i].set_yticks(params[key]['y_ticks'])
         labels = [item.get_text() for item in axs[i].get_xticklabels()]
         labels = [int(float(item)*100) for item in labels]
         axs[i].set_xticklabels(labels)
         axs[i].text(-0.15, 1, string.ascii_uppercase[i], color=plot_style.polar_night[0],
-                size=24, transform=axs[i].transAxes, fontweight='bold')
+                size=24, transform=axs[i].transAxes)
         if params[key]['y_scale_log']:
             ticks = [tick for tick in range(0, params[key]['y_lim'][1], 2)]
             axs[i].set_yticks(ticks)
@@ -327,10 +334,13 @@ def plot_ph_eta_sensitivity(args, data, params, israel_reported_data):
             key_name = key.replace('_HPD', '')
             key_name = key_name.replace('_cum', '')
             dat = data[key][data[key]['eta'] == eta]
+            cat_type = CategoricalDtype(categories=args.phs,
+            ordered=True)
+            dat['ph'] = dat['ph'].astype(cat_type)
             # logging the data so that density is calculated on the log scale
             if params[key]['y_scale_log']:
                 dat[key_name] = np.log10(dat[key_name])
-            sns.violinplot(x='ph', y=key_name, data=dat, 
+            sns.violinplot(x='ph', y=key_name, data=dat, order=args.phs,
                            ax=axs[i][j], saturation=1, cut=0, 
                            palette=plot_style.ph_col_dict)
             axs[i][j].set_ylim(params[key]['y_lim'])
@@ -340,6 +350,8 @@ def plot_ph_eta_sensitivity(args, data, params, israel_reported_data):
             axs[i][j].set_ylabel('')
             axs[i][j].set_xlabel('')
             axs[i][j].set_title('')
+            if 'y_ticks' in params[key].keys():
+                axs[i][j].set_yticks(params[key]['y_ticks'])
             axs[i][0].set_ylabel(params[key]['y_label'])
             if params[key]['y_scale_log']:
                 ticks = [tick for tick in range(0, params[key]['y_lim'][1], 2)]
@@ -351,42 +363,51 @@ def plot_ph_eta_sensitivity(args, data, params, israel_reported_data):
                                linestyle='--', color=plot_style.polar_night[0])
         axs[-1][j].set_xlabel("$p_h$ (%)")
         axs[0][j].text(-0.15, 1, string.ascii_uppercase[j], color=plot_style.polar_night[0],
-                       size=24, transform=axs[0][j].transAxes, fontweight='bold')
-        axs[0][j].set_title("$\eta$ = {0}".format(eta))
+                       size=24, transform=axs[0][j].transAxes)
+        if args.empirical:
+            axs[0][j].set_title("$\Theta$ = {0}".format(eta))
+        else:
+            axs[0][j].set_title("$\eta$ = {0}".format(eta))
     fig.savefig('figures/{0}_ph_eta_sensitivity.pdf'.format(args.plot_name))
     plt.close(fig)
 
 
+
 def plot_state_probs(args, data, ph_s, etas):
-    fig, axs = plt.subplots(len(ph_s), len(etas), 
+    n_col = len(etas)
+    fig, axs = plt.subplots(len(ph_s), n_col, 
                             figsize=(6.4*len(etas), 4.8*len(ph_s)), 
                             constrained_layout=True)
     # j is column
     for j, eta in enumerate(etas):
         # i is row
         for i, ph in enumerate(ph_s):
-            dat = data[(ph, eta)]['E_state_prob_HPD']
-            axs[i][j].plot(dat.index,
-                           dat[0.5],
-                           linewidth=3,
-                           color=plot_style.ph_col_dict[0.02])
-            axs[i][j].fill_between(dat.index,
-                                   dat[0.025],
-                                   dat[0.975], 
-                                   color=plot_style.ph_col_dict[0.02],
-                                   alpha=0.25)
-            axs[i][j].set_title("$\eta$ = {0}, $p_h$ = {1}%".format(eta, round(ph*100)))
-            axs[i][j].set_xlim(2020+(31+1)/366-0.035,
+            if (ph, eta) not in exclude_runs:
+                dat = data[(ph, eta)]['E_state_prob_HPD']
+                axs.flat[i*n_col+j].plot(dat.index,
+                               dat[0.5],
+                               linewidth=3,
+                               color=plot_style.ph_col_dict[0.02])
+                axs.flat[i*n_col+j].fill_between(dat.index,
+                                       dat[0.025],
+                                       dat[0.975], 
+                                       color=plot_style.ph_col_dict[0.02],
+                                       alpha=0.25)
+            if args.empirical:
+                axs.flat[i*n_col+j].set_title("$\Theta$ = {0}, $p_h$ = {1}%".format(eta, round(ph*100)))
+            else:
+               axs.flat[i*n_col+j].set_title("$\eta$ = {0}, $p_h$ = {1}%".format(eta, round(ph*100)))
+            axs.flat[i*n_col+j].set_xlim(2020+(31+1)/366-0.035,
                     2020+(31+29+31+31+1)/366+0.035)
-            axs[i][j].set_xticks((2020+(31+1-0.5)/366, 2020+(31+29+1-0.5)/366,
+            axs.flat[i*n_col+j].set_xticks((2020+(31+1-0.5)/366, 2020+(31+29+1-0.5)/366,
                        2020+(31+29+31+1-0.5)/366, 2020+(31+29+31+31+1-0.5)/366))
-            axs[i][j].set_xticklabels(('Feb.', 'March', 'April', 'May'))
-            axs[i][j].set_xlabel('')
-            axs[i][j].set_ylabel('')
+            axs.flat[i*n_col+j].set_xticklabels(('Feb.', 'March', 'April', 'May'))
+            axs.flat[i*n_col+j].set_xlabel('')
+            axs.flat[i*n_col+j].set_ylabel('')
             if ph == ph_s[-1]:
-                axs[i][j].set_xlabel('Month (2020)')
+                axs.flat[i*n_col+j].set_xlabel('Month (2020)')
             if eta == etas[0]:
-                axs[i][j].set_ylabel('Prob. imported infection')
+                axs.flat[i*n_col+j].set_ylabel('Prob. imported infection')
     fig.savefig('figures/{0}_state_probs.pdf'.format(args.plot_name))
 
 
@@ -396,17 +417,21 @@ def make_table(args, rows, data, ph_s, etas):
         table.insert(0, ['Parameter', 'Prior']) 
         for ph in ph_s:
             table[0].append(f'p_h={ph}')
-            for i, key in enumerate(rows.keys()):
-                dat = data[(ph, eta)][f'{key}_HPD']
-                if rows[key]['sci']:
-                    median = "{:.{}e}".format(dat.median(), rows[key]['decimals'])
-                    low_limit = "{:.{}e}".format(min(dat), rows[key]['decimals'])
-                    high_limit = "{:.{}e}".format(max(dat), rows[key]['decimals'])
-                else:
-                    median = "{:.{}f}".format(dat.median(), rows[key]['decimals'])
-                    low_limit = "{:.{}f}".format(min(dat), rows[key]['decimals'])
-                    high_limit = "{:.{}f}".format(max(dat), rows[key]['decimals'])
-                table[i+1].append(f'{median} ({low_limit} {high_limit})')
+            if (ph, eta) not in exclude_runs:
+                for i, key in enumerate(rows.keys()):
+                    dat = data[(ph, eta)][f'{key}_HPD']
+                    if rows[key]['sci']:
+                        median = "{:.{}e}".format(dat.median(), rows[key]['decimals'])
+                        low_limit = "{:.{}e}".format(min(dat), rows[key]['decimals'])
+                        high_limit = "{:.{}e}".format(max(dat), rows[key]['decimals'])
+                    else:
+                        median = "{:.{}f}".format(dat.median(), rows[key]['decimals'])
+                        low_limit = "{:.{}f}".format(min(dat), rows[key]['decimals'])
+                        high_limit = "{:.{}f}".format(max(dat), rows[key]['decimals'])
+                    table[i+1].append(f'{median} ({low_limit} {high_limit})')
+            else:
+                for i, key in enumerate(rows.keys()):
+                    table[i+1].append('')
         with open(f'tables/{args.plot_name}_{eta}.csv', 'w') as outfile:
             writer = csv.writer(outfile)
             writer.writerows(table)
@@ -432,27 +457,63 @@ def process_results_main(args):
     for ph in args.phs:
         for eta in args.etas: 
             print(ph, eta)
-            args.ph = ph
-            args.eta = eta
-            args.log = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.log'.\
-                            format(args.run_id, args.ph, args.eta)
-            args.traj =  'data/{0}/{0}_{1}_{2}/seir.{0}_{1}_{2}.traj'.\
-                            format(args.run_id, args.ph, args.eta)
-            args.plot_name = '{0}_{1}_{2}'.format(args.run_id, ph, eta)
-            results = process_results(args)
-            all_results[(ph, eta)] = results
-            for violin in args.violin_data_keys:
-                dat = pd.DataFrame(results[violin])
-                dat['ph'] = ph
-                dat['eta'] = eta
-                if violin in violin_data.keys():
-                    violin_data[violin] = violin_data[violin].append(dat)
-                else:
-                    violin_data[violin] = dat
+            if (ph, eta) not in exclude_runs:
+                args.ph = ph
+                args.eta = eta
+                if args.empirical == True:
+                    args.theta = eta
+                    args.peakImport = np.exp(args.theta*args.importR*(args.peakImportDate-args.importT0))
+                args.log = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.log'.\
+                                format(args.run_id, args.ph, args.eta)
+                args.traj =  'data/{0}/{0}_{1}_{2}/seir.{0}_{1}_{2}.traj'.\
+                                format(args.run_id, args.ph, args.eta)
+                args.plot_name = '{0}_{1}_{2}'.format(args.run_id, ph, eta)
+                results = process_results(args)
+                all_results[(ph, eta)] = results
+                for violin in args.violin_data_keys:
+                    dat = pd.DataFrame(results[violin])
+                    dat['ph'] = ph
+                    dat['eta'] = eta
+                    if violin in violin_data.keys():
+                        violin_data[violin] = violin_data[violin].append(dat)
+                    else:
+                        violin_data[violin] = dat
     return(all_results, violin_data)
 
 
-if __name__ == "__main__":
+def plot_reported_data(dat, epi_events):
+    fig, axs = plt.subplots(1, 1, 
+                            figsize=(6.4, 4.8), 
+                            constrained_layout=True)
+    axs.plot(dat['numeric_date'], dat['cases'],
+        color=plot_style.polar_night[0], lw=3)
+    axs.set_xlim((2020.05, 2020.35))
+    axs.set_xticks(pd.to_datetime(['02-01-20', '03-01-20', '04-01-20', '05-01-20']).\
+                to_series().apply(numeric_date).to_list())
+    axs.set_xticklabels(['Feb.', 'March', 'April', 'May'])
+    axs.set_xlabel('Month (2020)')
+    axs.set_ylabel('Reported cases')
+    cols = [plot_style.ph_col_dict[0.02], 
+        plot_style.ph_col_dict[0.05], 
+        plot_style.ph_col_dict[0.1], 
+        plot_style.ph_col_dict[0.2]]
+    counter=0
+    axs.get_ylim()
+    y_pos = 0.95*axs.get_ylim()[1]
+    for date, label in epi_events.items():
+        axs.axvline(x=date, ls='--', 
+            color=cols[counter], 
+            alpha=0.75)
+        axs.text(date+0.002, y_pos, label, color=cols[counter],
+        size=16, verticalalignment='top', 
+        bbox=dict(facecolor='white', alpha=0.75, edgecolor='none'))
+        y_pos = y_pos-0.15*axs.get_ylim()[1]
+        counter+=1
+    fig.savefig('figures/reported_cases.pdf')
+    plt.close('fig')
+
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--log', default='Israel_SARS_CoV-2_constant_R0.log')
     parser.add_argument('--traj', default='seir.Israel_SARS_CoV-2_constant_R0.traj')
@@ -467,35 +528,11 @@ if __name__ == "__main__":
     parser.add_argument('--infPeriod', help='duration of infecitous period (days)',
                     default=5.5)
     parser.add_argument('--run_id', default='')
+    parser.add_argument('--empirical', default=False)
     args = parser.parse_args()
     args.qs = tuple([float(item) for item in args.qs.split(',')])
-    # Submission results
-    # Run from June 3
-    args.phs = [0.02, 0.05, 0.10, 0.20, 0.50, 0.80]
-    args.etas = [10, 100, 1000, 2500, 5000]
-    args.violin_data_keys = ['seir.R0_HPD', 'seir.a_HPD', 'R_cum_HPD']
-    args.run_id = 'june3_fix_import'
-    all_results, violin_data = process_results_main(args)
-    args.plot_name = 'submission_results'
-    # Saves data objects
-    with open("{0}_all_results.pkl".format(args.plot_name), "wb") as outfile:
-        pickle.dump(all_results, outfile)
-
-    with open("{0}_violin_data.pkl".format(args.plot_name), "wb") as outfile:
-        pickle.dump(violin_data, outfile)
-    '''
-    # Reads data
-    with open("{0}_all_results.pkl".format(args.run_id), 'rb') as infile:
-        all_results = pickle.load(infile)
-
-    with open("{0}_violin_data.pkl".format(args.run_id), 'rb') as infile:
-        violin_data = pickle.load(infile)
-    print(all_results[list(all_results.keys())[0]].keys())
-    '''    
-    israel_reported_data = process_reported_data('data/ecdc_reported.csv',
-                                                 max(all_results[list(
-                                                    all_results.keys())[0]]['Il_traj_HPD'].index))
-    plot_params = { 'seir.R0_HPD': 
+    plot_params = {
+                    'seir.R0_HPD': 
                         {'y_label':         r"$ R_0 $",
                          'y_lim':           (0, 4),
                          'y_scale_log':     False,
@@ -504,7 +541,8 @@ if __name__ == "__main__":
                         {'y_label':         r"$ \alpha $",
                          'y_lim':           (0, 2),
                          'y_scale_log':     False,
-                         'reported_data':   False},
+                         'reported_data':   False,
+                         'y_ticks': [0, 0.5, 1.0, 1.5, 2.0]},
                     'R_cum_HPD':     
                         {'y_label':         "Cumulative incidence",
                          'y_lim':           (0, 7),
@@ -555,17 +593,64 @@ if __name__ == "__main__":
                          'decimals':        2,
                          'sci':             True,
                          'prior':           'Exponential(M=1.0)'}}
-    # Selected pH values for trajectory plot
-    ph_s = [0.02, 0.05, 0.10]
-    plot_ph_sensitivity(args, violin_data, plot_params, args.etas[2], israel_reported_data)
+    # Results using a constant import rate
+    args.phs = [0.02, 0.05, 0.10, 0.20, 0.50, 0.80]
+    args.etas = [10, 100, 1000, 2500, 5000]
+    args.empirical = False
+    exclude_runs = []
+    args.violin_data_keys = ['seir.R0_HPD', 'seir.a_HPD', 'R_cum_HPD']
+    args.run_id = 'june11_CMCMC_Final'
+    all_results, violin_data = process_results_main(args)
+
+    with open("{0}_all_results.pkl".format(args.run_id), "wb") as outfile:
+            pickle.dump(all_results, outfile)
+    with open("{0}_violin_data.pkl".format(args.run_id), "wb") as outfile:
+            pickle.dump(violin_data, outfile)
+    args.plot_name = 'june11_CMCMC_Final'
+    israel_reported_data = process_reported_data('data/ecdc_reported.csv',
+                                                 max(all_results[list(
+                                                    all_results.keys())[0]]['Il_traj_HPD'].index))
     plot_ph_eta_sensitivity(args, violin_data, plot_params, israel_reported_data)
-    plot_traj_combined(args, all_results, ph_s, args.etas[2], israel_reported_data)
     plot_state_probs(args, all_results, args.phs, args.etas)
-    make_table(args, table_rows, data, args.phs, args.etas)
+    make_table(args, table_rows, all_results, args.phs, args.etas)
+    # Using empiricial estimates of the import rate
+    args.run_id = 'july22_TMRCA_Import_Final'
+    args.empirical = True
+    args.importT0 = 2020.0511430143656
+    args.importR = 56.887337283993205
+    args.importS = -51.68986449810366
+    args.peakImportDate = 2020.18169399
+    all_results = {}
+    violin_data = {}
+    args.phs = [0.02, 0.05, 0.10, 0.20, 0.50, 0.80]
+    args.etas = [0.8, 0.9, 1.0, 1.1, 1.2]
+    args.violin_data_keys = ['seir.R0_HPD', 'seir.a_HPD', 'R_cum_HPD']
+    exclude_runs = [(0.02, 0.8)]
+    all_results, violin_data = process_results_main(args)
+    # saves processed data
+    with open("{0}_all_results.pkl".format(args.run_id), "wb") as outfile:
+            pickle.dump(all_results, outfile)
+
+    with open("{0}_violin_data.pkl".format(args.run_id), "wb") as outfile:
+            pickle.dump(violin_data, outfile)
+    args.plot_name = 'july22_TMRCA_Import_Final'
+    israel_reported_data = process_reported_data('data/ecdc_reported.csv',
+                                                 max(all_results[list(
+                                                    all_results.keys())[0]]['Il_traj_HPD'].index))
+    plot_ph_sensitivity(args, violin_data, plot_params, 1.0, israel_reported_data)
+    ph_s = [0.02, 0.05, 0.10]
+    plot_traj_combined(args, all_results, ph_s, 1.0, israel_reported_data)
+    plot_ph_eta_sensitivity(args, violin_data, plot_params, israel_reported_data)
+    plot_state_probs(args, all_results, args.phs, args.etas)
+    make_table(args, table_rows, all_results, args.phs, args.etas)
     args.ph = 0.05
-    args.eta = 1000
-    args.tree_path = 'data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.trees'.\
-                            format(args.run_id, args.ph, args.eta)
-    mcc_tree = calc_mcc_tree(args.tree_path, int(args.burnin*100))
+    args.eta = 1.0
+    mcc_tree = calc_mcc_tree('data/{0}/{0}_{1}_{2}/{0}_{1}_{2}.trees'.\
+                                format(args.run_id, args.ph, args.eta), int(args.burnin*100))
     plot_tree(mcc_tree, args)
+
+
+if __name__ == "__main__":
+    main()
+
 

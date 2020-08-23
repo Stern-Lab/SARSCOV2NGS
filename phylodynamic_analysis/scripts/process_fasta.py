@@ -5,7 +5,7 @@ from Bio import SeqIO
 from Bio import Phylo
 from calendar import isleap
 import argparse
-import generate_xml as gx
+from scripts import generate_xml as gx
 import subprocess
 import shlex
 from scipy import integrate
@@ -40,6 +40,7 @@ def rename_aln(aligned, pH, metadata):   # ph = probability of being in I_high
     return(aligned, names)
 
 
+# rescales branch lengths on tree to years
 def rescale_tree(tree):
     for non_terminal in tree.get_nonterminals():
         non_terminal.branch_length *= 1000
@@ -76,20 +77,19 @@ def process_fasta(args):
     return(args)
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     # input files
     parser.add_argument('--aln', help='input alignment file',
-                        default='masked.fasta')
+                        default='data/masked.fasta')
     parser.add_argument('--initTree', help='input ML time tree',
-                        default='tree.nwk')
+                        default='data/tree.nwk')
     parser.add_argument('--metadata', help='metadata file',
-                        default='metadata.tsv')
+                        default='data/metadata.tsv')
     parser.add_argument('--ref', help='reference fasta file',
-                        default='MN908947.3.fasta')
+                        default='data/MN908947.3.fasta')
     parser.add_argument('--xmlTemplate', help='template xml file',
-                        default='../../config/SEIR_TEMPLATE.xml')
-    parser.add_argument('--importDateFile', default='../israel_imported.csv')
+                        default='config/SEIR_TEMPLATE.xml')
     # Input parameters (most of these are passed to PhyDyn XML generator)
     parser.add_argument('--ph', help='proportion of I_high individuals',
                         default=0.2)
@@ -122,37 +122,19 @@ if __name__ == "__main__":
                         help='import rate', default=1000)
     parser.add_argument('--id', help='run id', default = 'Israel_SARS_CoV-2')
     args = parser.parse_args()
-    # This generates the XML used for the preprint, in which we tried to estimate
-    # the import rate using an exponential ditribution
-    # also assumes import rate changes to 25% of original value
-    # past this date (airport closures, etc. )
-    run_id = 'new'
-    subprocess.run(shlex.split())
-    args.xmlTemplate = 'config/SEIR_TEMPLATE.xml'
-    args.importChangeDate = 2020.2185792349726
-    args.importChange = 0.25
-    args.importM = 10
-    for ph in [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.20]:
-        args.ph = ph
-        args.base_path = '{0}/{0}_{1}'.format(run_id, ph)
-        args.out_name = '{0}_{1}'.format(run_id, ph)
-        subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
-        args = process_fasta(args)
-        gx.generate_xml(args)
-        print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
-    # This generates the XMLs used for journal submission
+    # This generates the XMLs used for initial journal submission
     run_id = 'june3_fix_import'
     args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
-    subprocess.run(shlex.split(f'mkdir {0}'.format(run_id)))
+    subprocess.run(shlex.split('mkdir {0}'.format(run_id)))
     for ph in [0.02, 0.05, 0.1, 0.2, 0.5, 0.80]:
         for eta in [10, 100, 1000, 2500, 5000]:
             args.importRate = eta
+            args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
             args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
             args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
             subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
             args = process_fasta(args)
             gx.generate_xml(args)
-            print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
     # This generates the XMLs used in the updated analysis with fixed eta
     # This XML template uses coupled MCMC to help convergence
     # Also adds an up-down operator on R0/E
@@ -161,27 +143,30 @@ if __name__ == "__main__":
     for ph in [0.02, 0.05, 0.1, 0.2, 0.5, 0.80]:
         for eta in [10, 100, 1000, 2500, 5000]:
             args.importRate = eta
-            args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT.xml'
             args.base_path = '{0}/{0}_{1}_{2}'.format(run_id, ph, eta)
             args.out_name = '{0}_{1}_{2}'.format(run_id, ph, eta)
-            subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
+            subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
             args = process_fasta(args)
             gx.generate_xml(args)
-            print('SGE_Batch -c "beast -threads 4 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
     # Finally, this generates the XMLs in the updated analysis using an empirical curve
     # for eta. This is estimated based on a global tree. A piecewise exponential
     # function is fit to the TMRCA estimates into Israel using the scripts/import_analysis.py file
-    # We're actively updating this analysis. 
-    run_id = 'JUNE19_FINAL_TMRCA_IMPORT'
-    args.xmlTemplate = 'config/SEIR_TEMPLATE_FIX_IMPORT_UPDOWN_CMCMC'
-    for ph in [0.02, 0.05, 0.1, 0.2, 0.5, 0.80]:
-        args.ph = ph
-        args.importRate = 'if (t > 2020.18169399) then (1680.1077272915447*exp(-51.68986044141094*(t-2020.18169399))) else \
-if (t > 2020.0511430148003) then (exp(56.88733590996238*(t-2020.0511430148003))) else 0.0'
-        args.xmlTemplate = '../../config/SEIR_TEMPLATE_IMPORTDEF.xml'
-        args.base_path = '{0}/{0}_{1}'.format(run_id, ph)
-        args.out_name = '{0}_{1}'.format(run_id, ph)
-        subprocess.run(shlex.split(f'mkdir {0}'.format(args.base_path)))
-        args = process_fasta(args)
-        gx.generate_xml(args)
-        print('SGE_Batch -c "beast -threads 3 -working -overwrite {0}/{1}.xml" -r {1}_out -q koelle@helens-vm2'.format(args.base_path, args.out_name))
+    # still uses the up-down operator on R0/E and uses coupled MCMC
+    run_id = 'july22_TMRCA_Import_Final'
+    subprocess.run(shlex.split('mkdir data/{0}'.format(run_id)))
+    args.xmlTemplate = 'config/SEIR_TEMPLATE_IMPORTDEF.xml'
+    import_rates = pd.read_csv('data/import_rates.csv')
+    import_rates = {item['theta']: item['eta'] for i, item in import_rates.iterrows()}
+        for ph in [0.02, 0.1]:
+            for theta in [0.8, 0.9]:
+                args.ph = ph
+                args.importRate = import_rates[theta]
+                args.base_path = 'data/{0}/{0}_{1}_{2}'.format(run_id, ph, theta)
+                args.out_name = '{0}_{1}_{2}'.format(run_id, ph, theta)
+                subprocess.run(shlex.split('mkdir {0}'.format(args.base_path)))
+                args = process_fasta(args)
+                gx.generate_xml(args)
+
+
+if __name__ == "__main__":
+    main()

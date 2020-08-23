@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood" required="" version="2.6">
+
+<data
+id="july22_TMRCA_Import_Final_0.8_0.8"
+spec="Alignment"
+name="alignment">
+<sequence id="seq_Israel/13075882/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075882/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075914/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075914/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002455/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/701002455/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002431/2020_2020.2281420765028_Il" spec="Sequence" taxon="Israel/701002431/2020_2020.2281420765028_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113174/2020_2020.2882513661202_Il" spec="Sequence" taxon="Israel/2113174/2020_2020.2882513661202_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2107132/2020_2020.285519125683_Il" spec="Sequence" taxon="Israel/2107132/2020_2020.285519125683_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2107681/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/2107681/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115701/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/2115701/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002504/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/701002504/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002313/2020_2020.2199453551912_Il" spec="Sequence" taxon="Israel/701002313/2020_2020.2199453551912_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002440/2020_2020.2281420765028_Il" spec="Sequence" taxon="Israel/701002440/2020_2020.2281420765028_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002489/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/701002489/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002538/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/701002538/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002681/2020_2020.2363387978141_Ih" spec="Sequence" taxon="Israel/701002681/2020_2020.2363387978141_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002317/2020_2020.2199453551912_Ih" spec="Sequence" taxon="Israel/701002317/2020_2020.2199453551912_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002561/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/701002561/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002462/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/701002462/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002752/2020_2020.2390710382513_Ih" spec="Sequence" taxon="Israel/701002752/2020_2020.2390710382513_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002458/2020_2020.2281420765028_Il" spec="Sequence" taxon="Israel/701002458/2020_2020.2281420765028_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002540/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/701002540/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002591/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/701002591/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002556/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/701002556/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002403/2020_2020.2254098360656_Ih" spec="Sequence" taxon="Israel/701002403/2020_2020.2254098360656_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002555/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/701002555/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002786/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/701002786/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002426/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/701002426/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113173/2020_2020.2882513661202_Il" spec="Sequence" taxon="Israel/2113173/2020_2020.2882513661202_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113178/2020_2020.2882513661202_Il" spec="Sequence" taxon="Israel/2113178/2020_2020.2882513661202_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002550/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/701002550/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002768/2020_2020.2390710382513_Ih" spec="Sequence" taxon="Israel/701002768/2020_2020.2390710382513_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002334/2020_2020.2226775956285_Ih" spec="Sequence" taxon="Israel/701002334/2020_2020.2226775956285_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113255/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/2113255/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113601/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/2113601/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115976/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/2115976/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002442/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/701002442/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113603/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/2113603/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115990/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/2115990/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2107137/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/2107137/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113155/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/2113155/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113256/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/2113256/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113678/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/2113678/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2113161/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/2113161/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115964/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/2115964/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2123853/2020_2020.301912568306_Ih" spec="Sequence" taxon="Israel/2123853/2020_2020.301912568306_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2123863/2020_2020.301912568306_Ih" spec="Sequence" taxon="Israel/2123863/2020_2020.301912568306_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002456/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/701002456/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002314/2020_2020.2199453551912_Il" spec="Sequence" taxon="Israel/701002314/2020_2020.2199453551912_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002327/2020_2020.2226775956285_Ih" spec="Sequence" taxon="Israel/701002327/2020_2020.2226775956285_Ih"         totalcount="4" value="" />
+<sequence id="seq_SaudiArabia/SCDC-3324/2020_2020.1898907103825_exog" spec="Sequence" taxon="SaudiArabia/SCDC-3324/2020_2020.1898907103825_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115968/2020_2020.2909836065573_Il" spec="Sequence" taxon="Israel/2115968/2020_2020.2909836065573_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002792/2020_2020.2418032786886_Il" spec="Sequence" taxon="Israel/701002792/2020_2020.2418032786886_Il"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Zeewolde-1365080/2020_2020.1680327868853_exog" spec="Sequence" taxon="Netherlands/Zeewolde-1365080/2020_2020.1680327868853_exog"         totalcount="4" value="" />
+<sequence id="seq_Luxembourg/Lux1/2020_2020.1625683060108_exog" spec="Sequence" taxon="Luxembourg/Lux1/2020_2020.1625683060108_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Flevoland-1/2020_2020.1871584699454_exog" spec="Sequence" taxon="Netherlands/Flevoland-1/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/ZuidHolland-13/2020_2020.1789617486338_exog" spec="Sequence" taxon="Netherlands/ZuidHolland-13/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Overijssel-2/2020_2020.1707650273224_exog" spec="Sequence" taxon="Netherlands/Overijssel-2/2020_2020.1707650273224_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Utrecht-14/2020_2020.1734972677596_exog" spec="Sequence" taxon="Netherlands/Utrecht-14/2020_2020.1734972677596_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/ZuidHolland-30/2020_2020.1926229508197_exog" spec="Sequence" taxon="Netherlands/ZuidHolland-30/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/NoordBrabant-26/2020_2020.1789617486338_exog" spec="Sequence" taxon="Netherlands/NoordBrabant-26/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Drente-1/2020_2020.23087431694_exog" spec="Sequence" taxon="Netherlands/Drente-1/2020_2020.23087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Scotland/CVR77/2020_2020.1707650273224_exog" spec="Sequence" taxon="Scotland/CVR77/2020_2020.1707650273224_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/NoordBrabant-56/2020_2020.1871584699454_exog" spec="Sequence" taxon="Netherlands/NoordBrabant-56/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Korea/KCDC2004/2020_2020.0887978142077_exog" spec="Sequence" taxon="Korea/KCDC2004/2020_2020.0887978142077_exog"         totalcount="4" value="" />
+<sequence id="seq_Kuwait/KU17/2020_2020.1680327868853_exog" spec="Sequence" taxon="Kuwait/KU17/2020_2020.1680327868853_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WI-256/2020_2020.2636612021859_exog" spec="Sequence" taxon="USA/WI-256/2020_2020.2636612021859_exog"         totalcount="4" value="" />
+<sequence id="seq_Beijing/BJ288/2020_2020.077868852459_exog" spec="Sequence" taxon="Beijing/BJ288/2020_2020.077868852459_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NC-200173/2020_2020.2527322404371_exog" spec="Sequence" taxon="USA/NC-200173/2020_2020.2527322404371_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/AZ-WL171/2020_2020.214480874317_exog" spec="Sequence" taxon="USA/AZ-WL171/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_Thailand/Bangkok-0020/2020_2020.2199453551912_exog" spec="Sequence" taxon="Thailand/Bangkok-0020/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WI-142/2020_2020.2745901639344_exog" spec="Sequence" taxon="USA/WI-142/2020_2020.2745901639344_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-Wadsworth-11330-01/2020_2020.181693989071_exog" spec="Sequence" taxon="USA/NY-Wadsworth-11330-01/2020_2020.181693989071_exog"         totalcount="4" value="" />
+<sequence id="seq_Canada/MB-37/2020_2020.2117486338798_exog" spec="Sequence" taxon="Canada/MB-37/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/TX-HMH0452/2020_2020.2554644808743_exog" spec="Sequence" taxon="USA/TX-HMH0452/2020_2020.2554644808743_exog"         totalcount="4" value="" />
+<sequence id="seq_Germany/NRW-53/2020_2020.200819672131_exog" spec="Sequence" taxon="Germany/NRW-53/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_Germany/NRW-42-2/2020_2020.214480874317_exog" spec="Sequence" taxon="Germany/NRW-42-2/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_Sweden/20-08146/2020_2020.1926229508197_exog" spec="Sequence" taxon="Sweden/20-08146/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Denmark/ALAB-HH05/2020_2020.1898907103825_exog" spec="Sequence" taxon="Denmark/ALAB-HH05/2020_2020.1898907103825_exog"         totalcount="4" value="" />
+<sequence id="seq_Germany/NRW-42-3/2020_2020.217213114754_exog" spec="Sequence" taxon="Germany/NRW-42-3/2020_2020.217213114754_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-NYUMC228/2020_2020.2554644808743_exog" spec="Sequence" taxon="USA/NY-NYUMC228/2020_2020.2554644808743_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-NYUMC252/2020_2020.2554644808743_exog" spec="Sequence" taxon="USA/NY-NYUMC252/2020_2020.2554644808743_exog"         totalcount="4" value="" />
+<sequence id="seq_Sweden/20-50315/2020_2020.1953551912568_exog" spec="Sequence" taxon="Sweden/20-50315/2020_2020.1953551912568_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF1684/2020_2020.1625683060108_exog" spec="Sequence" taxon="France/HF1684/2020_2020.1625683060108_exog"         totalcount="4" value="" />
+<sequence id="seq_France/PL1643/2020_2020.1543715846994_exog" spec="Sequence" taxon="France/PL1643/2020_2020.1543715846994_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/CT-Yale-099/2020_2020.266393442623_exog" spec="Sequence" taxon="USA/CT-Yale-099/2020_2020.266393442623_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF1871/2020_2020.1707650273224_exog" spec="Sequence" taxon="France/HF1871/2020_2020.1707650273224_exog"         totalcount="4" value="" />
+<sequence id="seq_England/NOTT-10E010/2020_2020.2090163934427_exog" spec="Sequence" taxon="England/NOTT-10E010/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Russia/Moscow-62505/2020_2020.1926229508197_exog" spec="Sequence" taxon="Russia/Moscow-62505/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Wuhan-Hu-1/2019_2019.9849315068493_exog" spec="Sequence" taxon="Wuhan-Hu-1/2019_2019.9849315068493_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/ULG-10057/2020_2020.2609289617487_exog" spec="Sequence" taxon="Belgium/ULG-10057/2020_2020.2609289617487_exog"         totalcount="4" value="" />
+<sequence id="seq_Russia/Buryatia-84508/2020_2020.2363387978141_exog" spec="Sequence" taxon="Russia/Buryatia-84508/2020_2020.2363387978141_exog"         totalcount="4" value="" />
+<sequence id="seq_Hungary/SRC-00186/2020_2020.2226775956285_exog" spec="Sequence" taxon="Hungary/SRC-00186/2020_2020.2226775956285_exog"         totalcount="4" value="" />
+<sequence id="seq_Switzerland/42169171/2020_2020.1571038251366_exog" spec="Sequence" taxon="Switzerland/42169171/2020_2020.1571038251366_exog"         totalcount="4" value="" />
+<sequence id="seq_Germany/NRW-011/2020_2020.1707650273224_exog" spec="Sequence" taxon="Germany/NRW-011/2020_2020.1707650273224_exog"         totalcount="4" value="" />
+<sequence id="seq_Scotland/EDB006/2020_2020.1871584699454_exog" spec="Sequence" taxon="Scotland/EDB006/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF1993/2020_2020.1734972677596_exog" spec="Sequence" taxon="France/HF1993/2020_2020.1734972677596_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF2060/2020_2020.1762295081967_exog" spec="Sequence" taxon="France/HF2060/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_France/B1623/2020_2020.1543715846994_exog" spec="Sequence" taxon="France/B1623/2020_2020.1543715846994_exog"         totalcount="4" value="" />
+<sequence id="seq_Canada/BC-41851/2020_2020.1680327868853_exog" spec="Sequence" taxon="Canada/BC-41851/2020_2020.1680327868853_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WA-S243/2020_2020.1625683060108_exog" spec="Sequence" taxon="USA/WA-S243/2020_2020.1625683060108_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WA-S96/2020_2020.1598360655737_exog" spec="Sequence" taxon="USA/WA-S96/2020_2020.1598360655737_exog"         totalcount="4" value="" />
+<sequence id="seq_Guangzhou/GZMU0010/2020_2020.1024590163934_exog" spec="Sequence" taxon="Guangzhou/GZMU0010/2020_2020.1024590163934_exog"         totalcount="4" value="" />
+<sequence id="seq_Luxembourg/LNS5677421/2020_2020.2363387978141_exog" spec="Sequence" taxon="Luxembourg/LNS5677421/2020_2020.2363387978141_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/HI-4970/2020_2020.1762295081967_exog" spec="Sequence" taxon="USA/HI-4970/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NH-0008/2020_2020.1680327868853_exog" spec="Sequence" taxon="USA/NH-0008/2020_2020.1680327868853_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/FL-5125/2020_2020.1598360655737_exog" spec="Sequence" taxon="USA/FL-5125/2020_2020.1598360655737_exog"         totalcount="4" value="" />
+<sequence id="seq_Finland/FIN-455/2020_2020.1844262295083_exog" spec="Sequence" taxon="Finland/FIN-455/2020_2020.1844262295083_exog"         totalcount="4" value="" />
+<sequence id="seq_Canada/ON-PHL8751/2020_2020.1625683060108_exog" spec="Sequence" taxon="Canada/ON-PHL8751/2020_2020.1625683060108_exog"         totalcount="4" value="" />
+<sequence id="seq_France/B2343/2020_2020.1789617486338_exog" spec="Sequence" taxon="France/B2343/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA09451/2020_2020.2035519125684_exog" spec="Sequence" taxon="France/ARA09451/2020_2020.2035519125684_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA09686/2020_2020.2062841530055_exog" spec="Sequence" taxon="France/ARA09686/2020_2020.2062841530055_exog"         totalcount="4" value="" />
+<sequence id="seq_India/781/2020_2020.1707650273224_exog" spec="Sequence" taxon="India/781/2020_2020.1707650273224_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA10910/2020_2020.2117486338798_exog" spec="Sequence" taxon="France/ARA10910/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_DRC/KN-13/2020_2020.1871584699454_exog" spec="Sequence" taxon="DRC/KN-13/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Australia/VIC48/2020_2020.1953551912568_exog" spec="Sequence" taxon="Australia/VIC48/2020_2020.1953551912568_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/VA-DCLS-0058/2020_2020.2472677595629_exog" spec="Sequence" taxon="USA/VA-DCLS-0058/2020_2020.2472677595629_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF2393/2020_2020.1953551912568_exog" spec="Sequence" taxon="France/HF2393/2020_2020.1953551912568_exog"         totalcount="4" value="" />
+<sequence id="seq_Poland/PL-P9/2020_2020.2390710382513_exog" spec="Sequence" taxon="Poland/PL-P9/2020_2020.2390710382513_exog"         totalcount="4" value="" />
+<sequence id="seq_Switzerland/AG0361/2020_2020.1571038251366_exog" spec="Sequence" taxon="Switzerland/AG0361/2020_2020.1571038251366_exog"         totalcount="4" value="" />
+<sequence id="seq_Thailand/Bangkok-0045/2020_2020.2390710382513_exog" spec="Sequence" taxon="Thailand/Bangkok-0045/2020_2020.2390710382513_exog"         totalcount="4" value="" />
+<sequence id="seq_Indonesia/JKT-EIJK0141/2020_2020.2090163934427_exog" spec="Sequence" taxon="Indonesia/JKT-EIJK0141/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Turkey/HSGM-7718/2020_2020.2199453551912_exog" spec="Sequence" taxon="Turkey/HSGM-7718/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_Switzerland/GE6065/2020_2020.2636612021859_exog" spec="Sequence" taxon="Switzerland/GE6065/2020_2020.2636612021859_exog"         totalcount="4" value="" />
+<sequence id="seq_Australia/VIC130/2020_2020.2199453551912_exog" spec="Sequence" taxon="Australia/VIC130/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_India/NCDC-01604/2020_2020.2090163934427_exog" spec="Sequence" taxon="India/NCDC-01604/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Guangdong/20SF1159/2020_2020.0833333333333_exog" spec="Sequence" taxon="Guangdong/20SF1159/2020_2020.0833333333333_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/UN-UW-581/2020_2020.1953551912568_exog" spec="Sequence" taxon="USA/UN-UW-581/2020_2020.1953551912568_exog"         totalcount="4" value="" />
+<sequence id="seq_Australia/VIC492/2020_2020.2254098360656_exog" spec="Sequence" taxon="Australia/VIC492/2020_2020.2254098360656_exog"         totalcount="4" value="" />
+<sequence id="seq_Philippines/RITM-02/2020_2020.1926229508197_exog" spec="Sequence" taxon="Philippines/RITM-02/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Singapore/65/2020_2020.26912568306_exog" spec="Sequence" taxon="Singapore/65/2020_2020.26912568306_exog"         totalcount="4" value="" />
+<sequence id="seq_Luxembourg/LNS7841004/2020_2020.2527322404371_exog" spec="Sequence" taxon="Luxembourg/LNS7841004/2020_2020.2527322404371_exog"         totalcount="4" value="" />
+<sequence id="seq_Korea/KCDC2016/2020_2020.1325136612022_exog" spec="Sequence" taxon="Korea/KCDC2016/2020_2020.1325136612022_exog"         totalcount="4" value="" />
+<sequence id="seq_Brazil/RJ-352/2020_2020.1762295081967_exog" spec="Sequence" taxon="Brazil/RJ-352/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_Chile/Santiago-op2d1/2020_2020.1789617486338_exog" spec="Sequence" taxon="Chile/Santiago-op2d1/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_Spain/CastillayLeon201323/2020_2020.1653005464482_exog" spec="Sequence" taxon="Spain/CastillayLeon201323/2020_2020.1653005464482_exog"         totalcount="4" value="" />
+<sequence id="seq_Senegal/136/2020_2020.198087431694_exog" spec="Sequence" taxon="Senegal/136/2020_2020.198087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Philippines/RITM-04/2020_2020.1844262295083_exog" spec="Sequence" taxon="Philippines/RITM-04/2020_2020.1844262295083_exog"         totalcount="4" value="" />
+<sequence id="seq_HongKong/VM20002493/2020_2020.1079234972678_exog" spec="Sequence" taxon="HongKong/VM20002493/2020_2020.1079234972678_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/SH16/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/SH16/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Brazil/AL-837/2020_2020.2117486338798_exog" spec="Sequence" taxon="Brazil/AL-837/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_Brazil/BA-312/2020_2020.1734972677596_exog" spec="Sequence" taxon="Brazil/BA-312/2020_2020.1734972677596_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/2115980/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/2115980/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_DRC/2120/2020_2020.2800546448088_exog" spec="Sequence" taxon="DRC/2120/2020_2020.2800546448088_exog"         totalcount="4" value="" />
+<sequence id="seq_env/Beijing/BJ2454/2020_2020.200819672131_exog" spec="Sequence" taxon="env/Beijing/BJ2454/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_Egypt/NRC-03/2020_2020.2117486338798_exog" spec="Sequence" taxon="Egypt/NRC-03/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_Finland/13M83/2020_2020.198087431694_exog" spec="Sequence" taxon="Finland/13M83/2020_2020.198087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/701002407/2020_2020.2254098360656_Ih" spec="Sequence" taxon="Israel/701002407/2020_2020.2254098360656_Ih"         totalcount="4" value="" />
+<sequence id="seq_USA/WI-129/2020_2020.2636612021859_exog" spec="Sequence" taxon="USA/WI-129/2020_2020.2636612021859_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/2116859/2020_2020.301912568306_Il" spec="Sequence" taxon="Israel/2116859/2020_2020.301912568306_Il"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Diemen-1363454/2020_2020.1598360655737_exog" spec="Sequence" taxon="Netherlands/Diemen-1363454/2020_2020.1598360655737_exog"         totalcount="4" value="" />
+<sequence id="seq_Spain/Valencia99/2020_2020.2090163934427_exog" spec="Sequence" taxon="Spain/Valencia99/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/1639953/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/1639953/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077498/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077498/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077803/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/13077803/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020084/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020084/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075790/2020_2020.2445355191257_Il" spec="Sequence" taxon="Israel/13075790/2020_2020.2445355191257_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099251/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2099251/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089697/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089697/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086022/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2086022/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51146500/2020_2020.2609289617487_Ih" spec="Sequence" taxon="Israel/51146500/2020_2020.2609289617487_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046815/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/2046815/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047004/2020_2020.2363387978141_Ih" spec="Sequence" taxon="Israel/2047004/2020_2020.2363387978141_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086045/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2086045/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089866/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089866/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711116/2020_2020.3046448087432_Ih" spec="Sequence" taxon="Israel/130711116/2020_2020.3046448087432_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075735/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075735/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089698/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089698/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047883/2020_2020.2472677595629_Ih" spec="Sequence" taxon="Israel/2047883/2020_2020.2472677595629_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710067/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/130710067/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047604/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/2047604/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2023920/2020_2020.2090163934427_Il" spec="Sequence" taxon="Israel/2023920/2020_2020.2090163934427_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089861/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089861/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140271/2020_2020.2117486338798_Ih" spec="Sequence" taxon="Israel/51140271/2020_2020.2117486338798_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075719/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/13075719/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710097/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/130710097/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059232/2020_2020.23087431694_Il" spec="Sequence" taxon="Israel/990059232/2020_2020.23087431694_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710062/2020_2020.285519125683_Ih" spec="Sequence" taxon="Israel/130710062/2020_2020.285519125683_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059251/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059251/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711104/2020_2020.301912568306_Ih" spec="Sequence" taxon="Israel/130711104/2020_2020.301912568306_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059203/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059203/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059233/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059233/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077494/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/13077494/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020068/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020068/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020063/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020063/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077497/2020_2020.2527322404371_Il" spec="Sequence" taxon="Israel/13077497/2020_2020.2527322404371_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2023922/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2023922/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047772/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/2047772/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089863/2020_2020.25_Il" spec="Sequence" taxon="Israel/2089863/2020_2020.25_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047016/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/2047016/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710159/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/130710159/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710390/2020_2020.2937158469945_Ih" spec="Sequence" taxon="Israel/130710390/2020_2020.2937158469945_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047145/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/2047145/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077711/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077711/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075788/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075788/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047188/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/2047188/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047418/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/2047418/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51137031/2020_2020.1653005464482_Ih" spec="Sequence" taxon="Israel/51137031/2020_2020.1653005464482_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020087/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020087/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140279/2020_2020.2117486338798_Ih" spec="Sequence" taxon="Israel/51140279/2020_2020.2117486338798_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099421/2020_2020.2527322404371_Il" spec="Sequence" taxon="Israel/2099421/2020_2020.2527322404371_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/990333068/2020_2020.2281420765028_Ih" spec="Sequence" taxon="Israel/990333068/2020_2020.2281420765028_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077558/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077558/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710211/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/130710211/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710414/2020_2020.2937158469945_Ih" spec="Sequence" taxon="Israel/130710414/2020_2020.2937158469945_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711082/2020_2020.301912568306_Ih" spec="Sequence" taxon="Israel/130711082/2020_2020.301912568306_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51141121/2020_2020.2226775956285_Ih" spec="Sequence" taxon="Israel/51141121/2020_2020.2226775956285_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51146355/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/51146355/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711112/2020_2020.3046448087432_Ih" spec="Sequence" taxon="Israel/130711112/2020_2020.3046448087432_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/1639996/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/1639996/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047364/2020_2020.2390710382513_Ih" spec="Sequence" taxon="Israel/2047364/2020_2020.2390710382513_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059202/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059202/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710099/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/130710099/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077377/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/13077377/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059252/2020_2020.23087431694_Il" spec="Sequence" taxon="Israel/990059252/2020_2020.23087431694_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077562/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077562/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047586/2020_2020.2418032786886_Il" spec="Sequence" taxon="Israel/2047586/2020_2020.2418032786886_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710716/2020_2020.299180327869_Ih" spec="Sequence" taxon="Israel/130710716/2020_2020.299180327869_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047738/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/2047738/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077564/2020_2020.2554644808743_Il" spec="Sequence" taxon="Israel/13077564/2020_2020.2554644808743_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077823/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/13077823/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077413/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077413/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075832/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075832/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077875/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/13077875/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711367/2020_2020.3073770491803_Il" spec="Sequence" taxon="Israel/130711367/2020_2020.3073770491803_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089723/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089723/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099018/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2099018/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51146669/2020_2020.2609289617487_Ih" spec="Sequence" taxon="Israel/51146669/2020_2020.2609289617487_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990300860/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/990300860/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077846/2020_2020.2581967213114_Il" spec="Sequence" taxon="Israel/13077846/2020_2020.2581967213114_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077847/2020_2020.2581967213114_Il" spec="Sequence" taxon="Israel/13077847/2020_2020.2581967213114_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/990307712/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/990307712/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089718/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089718/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51145482/2020_2020.2609289617487_Ih" spec="Sequence" taxon="Israel/51145482/2020_2020.2609289617487_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990430264/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/990430264/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020078/2020_2020.2090163934427_Il" spec="Sequence" taxon="Israel/2020078/2020_2020.2090163934427_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086012/2020_2020.25_Il" spec="Sequence" taxon="Israel/2086012/2020_2020.25_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089383/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089383/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020038/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020038/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047011/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/2047011/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089712/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089712/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089812/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089812/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089366/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089366/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099416/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2099416/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086001/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2086001/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046614/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2046614/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089375/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089375/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51146683/2020_2020.2609289617487_Ih" spec="Sequence" taxon="Israel/51146683/2020_2020.2609289617487_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077560/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077560/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089368/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089368/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990430265/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/990430265/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075703/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/13075703/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140539/2020_2020.214480874317_Il" spec="Sequence" taxon="Israel/51140539/2020_2020.214480874317_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/51141014/2020_2020.2226775956285_Ih" spec="Sequence" taxon="Israel/51141014/2020_2020.2226775956285_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51145198/2020_2020.25_Il" spec="Sequence" taxon="Israel/51145198/2020_2020.25_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/51144342/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/51144342/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046434/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2046434/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077882/2020_2020.2581967213114_Ih" spec="Sequence" taxon="Israel/13077882/2020_2020.2581967213114_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086034/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2086034/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990333189/2020_2020.233606557377_Ih" spec="Sequence" taxon="Israel/990333189/2020_2020.233606557377_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059238/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059238/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140315/2020_2020.2117486338798_Ih" spec="Sequence" taxon="Israel/51140315/2020_2020.2117486338798_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140836/2020_2020.217213114754_Ih" spec="Sequence" taxon="Israel/51140836/2020_2020.217213114754_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990300724/2020_2020.25_Ih" spec="Sequence" taxon="Israel/990300724/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140028/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/51140028/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13075782/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/13075782/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710643/2020_2020.299180327869_Ih" spec="Sequence" taxon="Israel/130710643/2020_2020.299180327869_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047749/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/2047749/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047927/2020_2020.2472677595629_Ih" spec="Sequence" taxon="Israel/2047927/2020_2020.2472677595629_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046616/2020_2020.2527322404371_Il" spec="Sequence" taxon="Israel/2046616/2020_2020.2527322404371_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077511/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077511/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710217/2020_2020.2909836065573_Ih" spec="Sequence" taxon="Israel/130710217/2020_2020.2909836065573_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077723/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077723/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086008/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2086008/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710157/2020_2020.2882513661202_Ih" spec="Sequence" taxon="Israel/130710157/2020_2020.2882513661202_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077383/2020_2020.2527322404371_Il" spec="Sequence" taxon="Israel/13077383/2020_2020.2527322404371_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046171/2020_2020.2472677595629_Ih" spec="Sequence" taxon="Israel/2046171/2020_2020.2472677595629_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086033/2020_2020.25_Il" spec="Sequence" taxon="Israel/2086033/2020_2020.25_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077726/2020_2020.2554644808743_Ih" spec="Sequence" taxon="Israel/13077726/2020_2020.2554644808743_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059204/2020_2020.23087431694_Ih" spec="Sequence" taxon="Israel/990059204/2020_2020.23087431694_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089839/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089839/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089852/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089852/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077510/2020_2020.2554644808743_Il" spec="Sequence" taxon="Israel/13077510/2020_2020.2554644808743_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099159/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2099159/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51146503/2020_2020.2609289617487_Ih" spec="Sequence" taxon="Israel/51146503/2020_2020.2609289617487_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2099019/2020_2020.2527322404371_Ih" spec="Sequence" taxon="Israel/2099019/2020_2020.2527322404371_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990059244/2020_2020.23087431694_Il" spec="Sequence" taxon="Israel/990059244/2020_2020.23087431694_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/51140068/2020_2020.2117486338798_Ih" spec="Sequence" taxon="Israel/51140068/2020_2020.2117486338798_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/13077840/2020_2020.2581967213114_Il" spec="Sequence" taxon="Israel/13077840/2020_2020.2581967213114_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/51137844/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/51137844/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/51141225/2020_2020.2226775956285_Ih" spec="Sequence" taxon="Israel/51141225/2020_2020.2226775956285_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990300681/2020_2020.2445355191257_Ih" spec="Sequence" taxon="Israel/990300681/2020_2020.2445355191257_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020069/2020_2020.2090163934427_Il" spec="Sequence" taxon="Israel/2020069/2020_2020.2090163934427_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047392/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/2047392/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2047567/2020_2020.2418032786886_Ih" spec="Sequence" taxon="Israel/2047567/2020_2020.2418032786886_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2046548/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2046548/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/2086004/2020_2020.25_Il" spec="Sequence" taxon="Israel/2086004/2020_2020.25_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2020051/2020_2020.2090163934427_Ih" spec="Sequence" taxon="Israel/2020051/2020_2020.2090163934427_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/990300691/2020_2020.2472677595629_Il" spec="Sequence" taxon="Israel/990300691/2020_2020.2472677595629_Il"         totalcount="4" value="" />
+<sequence id="seq_Israel/2089380/2020_2020.25_Ih" spec="Sequence" taxon="Israel/2089380/2020_2020.25_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130711417/2020_2020.3073770491803_Ih" spec="Sequence" taxon="Israel/130711417/2020_2020.3073770491803_Ih"         totalcount="4" value="" />
+<sequence id="seq_Israel/130710644/2020_2020.299180327869_Ih" spec="Sequence" taxon="Israel/130710644/2020_2020.299180327869_Ih"         totalcount="4" value="" />
+<sequence id="seq_Germany/NRW-14/2020_2020.1926229508197_exog" spec="Sequence" taxon="Germany/NRW-14/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Denmark/ALAB-SSI481/2020_2020.23087431694_exog" spec="Sequence" taxon="Denmark/ALAB-SSI481/2020_2020.23087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Denmark/ALAB-SSI490/2020_2020.2199453551912_exog" spec="Sequence" taxon="Denmark/ALAB-SSI490/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_Denmark/ALAB-SSI184/2020_2020.1871584699454_exog" spec="Sequence" taxon="Denmark/ALAB-SSI184/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Denmark/ALAB-SSI189/2020_2020.1871584699454_exog" spec="Sequence" taxon="Denmark/ALAB-SSI189/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/ITM-C030/2020_2020.23087431694_exog" spec="Sequence" taxon="Belgium/ITM-C030/2020_2020.23087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/MD-HP024/2020_2020.217213114754_exog" spec="Sequence" taxon="USA/MD-HP024/2020_2020.217213114754_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-NYUMC323/2020_2020.2527322404371_exog" spec="Sequence" taxon="USA/NY-NYUMC323/2020_2020.2527322404371_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WY-WYPHL015/2020_2020.2117486338798_exog" spec="Sequence" taxon="USA/WY-WYPHL015/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WY-WYPHL007/2020_2020.2035519125684_exog" spec="Sequence" taxon="USA/WY-WYPHL007/2020_2020.2035519125684_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/CT-Yale-084/2020_2020.2636612021859_exog" spec="Sequence" taxon="USA/CT-Yale-084/2020_2020.2636612021859_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/UGent-34/2020_2020.233606557377_exog" spec="Sequence" taxon="Belgium/UGent-34/2020_2020.233606557377_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/TX-HMH0159/2020_2020.2254098360656_exog" spec="Sequence" taxon="USA/TX-HMH0159/2020_2020.2254098360656_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/UGent-37/2020_2020.2363387978141_exog" spec="Sequence" taxon="Belgium/UGent-37/2020_2020.2363387978141_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/TX-HMH097/2020_2020.214480874317_exog" spec="Sequence" taxon="USA/TX-HMH097/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_England/CAMB-78470/2020_2020.2609289617487_exog" spec="Sequence" taxon="England/CAMB-78470/2020_2020.2609289617487_exog"         totalcount="4" value="" />
+<sequence id="seq_Norway/1955/2020_2020.1926229508197_exog" spec="Sequence" taxon="Norway/1955/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Australia/QLDID920/2020_2020.1926229508197_exog" spec="Sequence" taxon="Australia/QLDID920/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Poland/1104795/2020_2020.2117486338798_exog" spec="Sequence" taxon="Poland/1104795/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_Taiwan/NTU09/2020_2020.200819672131_exog" spec="Sequence" taxon="Taiwan/NTU09/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/MA-2652/2020_2020.1789617486338_exog" spec="Sequence" taxon="USA/MA-2652/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/MA-3614/2020_2020.1789617486338_exog" spec="Sequence" taxon="USA/MA-3614/2020_2020.1789617486338_exog"         totalcount="4" value="" />
+<sequence id="seq_France/IDF2989/2020_2020.214480874317_exog" spec="Sequence" taxon="France/IDF2989/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_France/HF2748/2020_2020.2090163934427_exog" spec="Sequence" taxon="France/HF2748/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Poland/1105644/2020_2020.2117486338798_exog" spec="Sequence" taxon="Poland/1105644/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/CA7/2020_2020.0997267759562_exog" spec="Sequence" taxon="USA/CA7/2020_2020.0997267759562_exog"         totalcount="4" value="" />
+<sequence id="seq_Spain/Andalucia201617/2020_2020.1762295081967_exog" spec="Sequence" taxon="Spain/Andalucia201617/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/VM-0325171/2020_2020.23087431694_exog" spec="Sequence" taxon="Belgium/VM-0325171/2020_2020.23087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/AGR-0324174/2020_2020.2281420765028_exog" spec="Sequence" taxon="Belgium/AGR-0324174/2020_2020.2281420765028_exog"         totalcount="4" value="" />
+<sequence id="seq_Canada/NS-13/2020_2020.198087431694_exog" spec="Sequence" taxon="Canada/NS-13/2020_2020.198087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Scotland/CVR704/2020_2020.233606557377_exog" spec="Sequence" taxon="Scotland/CVR704/2020_2020.233606557377_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WI-UW-261/2020_2020.233606557377_exog" spec="Sequence" taxon="USA/WI-UW-261/2020_2020.233606557377_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/MN67-MDH67/2020_2020.200819672131_exog" spec="Sequence" taxon="USA/MN67-MDH67/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/WI-233/2020_2020.2363387978141_exog" spec="Sequence" taxon="USA/WI-233/2020_2020.2363387978141_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/Friesland-3/2020_2020.2390710382513_exog" spec="Sequence" taxon="Netherlands/Friesland-3/2020_2020.2390710382513_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/NoordBrabant-103/2020_2020.1871584699454_exog" spec="Sequence" taxon="Netherlands/NoordBrabant-103/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/MN62-MDH62/2020_2020.200819672131_exog" spec="Sequence" taxon="USA/MN62-MDH62/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_DRC/KN-0017/2020_2020.1926229508197_exog" spec="Sequence" taxon="DRC/KN-0017/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/CT-Yale-116/2020_2020.2745901639344_exog" spec="Sequence" taxon="USA/CT-Yale-116/2020_2020.2745901639344_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/CT-Yale-120/2020_2020.2773224043715_exog" spec="Sequence" taxon="USA/CT-Yale-120/2020_2020.2773224043715_exog"         totalcount="4" value="" />
+<sequence id="seq_Jordan/SR-054/2020_2020.2445355191257_exog" spec="Sequence" taxon="Jordan/SR-054/2020_2020.2445355191257_exog"         totalcount="4" value="" />
+<sequence id="seq_Greece/148/2020_2020.1871584699454_exog" spec="Sequence" taxon="Greece/148/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Portugal/PT0017/2020_2020.1926229508197_exog" spec="Sequence" taxon="Portugal/PT0017/2020_2020.1926229508197_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/GL-030546/2020_2020.1762295081967_exog" spec="Sequence" taxon="Belgium/GL-030546/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/AK-PHL013/2020_2020.214480874317_exog" spec="Sequence" taxon="USA/AK-PHL013/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_Hangzhou/HZCDC0135/2020_2020.058743169399_exog" spec="Sequence" taxon="Hangzhou/HZCDC0135/2020_2020.058743169399_exog"         totalcount="4" value="" />
+<sequence id="seq_Belgium/030959/2020_2020.1871584699454_exog" spec="Sequence" taxon="Belgium/030959/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/ISR-IT0320/2020_2020.1653005464482_Il" spec="Sequence" taxon="Israel/ISR-IT0320/2020_2020.1653005464482_Il"         totalcount="4" value="" />
+<sequence id="seq_USA/CA-CZB0707/2020_2020.2254098360656_exog" spec="Sequence" taxon="USA/CA-CZB0707/2020_2020.2254098360656_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA12877/2020_2020.2254098360656_exog" spec="Sequence" taxon="France/ARA12877/2020_2020.2254098360656_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA11995/2020_2020.2199453551912_exog" spec="Sequence" taxon="France/ARA11995/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_France/ARA11997/2020_2020.2199453551912_exog" spec="Sequence" taxon="France/ARA11997/2020_2020.2199453551912_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-PV09060/2020_2020.217213114754_exog" spec="Sequence" taxon="USA/NY-PV09060/2020_2020.217213114754_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/NY-PV09069/2020_2020.217213114754_exog" spec="Sequence" taxon="USA/NY-PV09069/2020_2020.217213114754_exog"         totalcount="4" value="" />
+<sequence id="seq_CostaRica/04/2020_2020.2117486338798_exog" spec="Sequence" taxon="CostaRica/04/2020_2020.2117486338798_exog"         totalcount="4" value="" />
+<sequence id="seq_Israel/ISR-JP0320/2020_2020.146174863388_Ih" spec="Sequence" taxon="Israel/ISR-JP0320/2020_2020.146174863388_Ih"         totalcount="4" value="" />
+<sequence id="seq_Belgium/HAA-030953/2020_2020.1871584699454_exog" spec="Sequence" taxon="Belgium/HAA-030953/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Shanghai/SH0040/2020_2020.0806010928961_exog" spec="Sequence" taxon="Shanghai/SH0040/2020_2020.0806010928961_exog"         totalcount="4" value="" />
+<sequence id="seq_Japan/P3-1/2020_2020.1871584699454_exog" spec="Sequence" taxon="Japan/P3-1/2020_2020.1871584699454_exog"         totalcount="4" value="" />
+<sequence id="seq_Singapore/24/2020_2020.1734972677596_exog" spec="Sequence" taxon="Singapore/24/2020_2020.1734972677596_exog"         totalcount="4" value="" />
+<sequence id="seq_Singapore/26/2020_2020.1762295081967_exog" spec="Sequence" taxon="Singapore/26/2020_2020.1762295081967_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/UT-099/2020_2020.200819672131_exog" spec="Sequence" taxon="USA/UT-099/2020_2020.200819672131_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/VA-DCLS-0003/2020_2020.2090163934427_exog" spec="Sequence" taxon="USA/VA-DCLS-0003/2020_2020.2090163934427_exog"         totalcount="4" value="" />
+<sequence id="seq_Australia/VIC283/2020_2020.2226775956285_exog" spec="Sequence" taxon="Australia/VIC283/2020_2020.2226775956285_exog"         totalcount="4" value="" />
+<sequence id="seq_PuertoRico/CDC-S5/2020_2020.2254098360656_exog" spec="Sequence" taxon="PuertoRico/CDC-S5/2020_2020.2254098360656_exog"         totalcount="4" value="" />
+<sequence id="seq_Greece/145/2020_2020.2062841530055_exog" spec="Sequence" taxon="Greece/145/2020_2020.2062841530055_exog"         totalcount="4" value="" />
+<sequence id="seq_Finland/13M58/2020_2020.198087431694_exog" spec="Sequence" taxon="Finland/13M58/2020_2020.198087431694_exog"         totalcount="4" value="" />
+<sequence id="seq_Netherlands/NoordBrabant-97/2020_2020.214480874317_exog" spec="Sequence" taxon="Netherlands/NoordBrabant-97/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_Ghana/2986-S10/2020_2020.2472677595629_exog" spec="Sequence" taxon="Ghana/2986-S10/2020_2020.2472677595629_exog"         totalcount="4" value="" />
+<sequence id="seq_USA/VA-DCLS-0033/2020_2020.214480874317_exog" spec="Sequence" taxon="USA/VA-DCLS-0033/2020_2020.214480874317_exog"         totalcount="4" value="" />
+<sequence id="seq_England/20139047504/2020_2020.2390710382513_exog" spec="Sequence" taxon="England/20139047504/2020_2020.2390710382513_exog"         totalcount="4" value="" />
+<sequence id="seq_Shanghai/SH0037/2020_2020.0806010928961_exog" spec="Sequence" taxon="Shanghai/SH0037/2020_2020.0806010928961_exog"         totalcount="4" value="" />
+<sequence id="seq_Taiwan/CGMH-CGU-02/2020_2020.094262295082_exog" spec="Sequence" taxon="Taiwan/CGMH-CGU-02/2020_2020.094262295082_exog"         totalcount="4" value="" />
+
+</data>
+
+<map name="Uniform" >beast.math.distributions.Uniform</map>
+<map name="Exponential" >beast.math.distributions.Exponential</map>
+<map name="LogNormal" >beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Normal" >beast.math.distributions.Normal</map>
+<map name="Beta" >beast.math.distributions.Beta</map>
+<map name="Gamma" >beast.math.distributions.Gamma</map>
+<map name="LaplaceDistribution" >beast.math.distributions.LaplaceDistribution</map>
+<map name="prior" >beast.math.distributions.Prior</map>
+<map name="InverseGamma" >beast.math.distributions.InverseGamma</map>
+<map name="OneOnX" >beast.math.distributions.OneOnX</map>
+
+<run id="mcmc" spec="beast.coupledMCMC.CoupledMCMC" chainLength="10000000" chains="3" target="0.234" logHeatedChains="true" deltaTemperature="0.1" optimise="true" resampleEvery="100" >
+    <state id="state" spec="State" storeEvery="1000">
+        <tree id="Tree.t:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.evolution.tree.Tree" name="stateNode">
+            <trait id="dateTrait.t:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.evolution.tree.TraitSet" traitname="date" value= "Israel/13075882/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/13075914/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/701002455/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/701002431/2020_2020.2281420765028_Il=2020.2281420765028,Israel/2113174/2020_2020.2882513661202_Il=2020.2882513661202,Israel/2107132/2020_2020.285519125683_Il=2020.285519125683,Israel/2107681/2020_2020.285519125683_Ih=2020.285519125683,Israel/2115701/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/701002504/2020_2020.23087431694_Ih=2020.23087431694,Israel/701002313/2020_2020.2199453551912_Il=2020.2199453551912,Israel/701002440/2020_2020.2281420765028_Il=2020.2281420765028,Israel/701002489/2020_2020.23087431694_Ih=2020.23087431694,Israel/701002538/2020_2020.23087431694_Ih=2020.23087431694,Israel/701002681/2020_2020.2363387978141_Ih=2020.2363387978141,Israel/701002317/2020_2020.2199453551912_Ih=2020.2199453551912,Israel/701002561/2020_2020.233606557377_Ih=2020.233606557377,Israel/701002462/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/701002752/2020_2020.2390710382513_Ih=2020.2390710382513,Israel/701002458/2020_2020.2281420765028_Il=2020.2281420765028,Israel/701002540/2020_2020.23087431694_Ih=2020.23087431694,Israel/701002591/2020_2020.233606557377_Ih=2020.233606557377,Israel/701002556/2020_2020.233606557377_Ih=2020.233606557377,Israel/701002403/2020_2020.2254098360656_Ih=2020.2254098360656,Israel/701002555/2020_2020.233606557377_Ih=2020.233606557377,Israel/701002786/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/701002426/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/2113173/2020_2020.2882513661202_Il=2020.2882513661202,Israel/2113178/2020_2020.2882513661202_Il=2020.2882513661202,Israel/701002550/2020_2020.233606557377_Ih=2020.233606557377,Israel/701002768/2020_2020.2390710382513_Ih=2020.2390710382513,Israel/701002334/2020_2020.2226775956285_Ih=2020.2226775956285,Israel/2113255/2020_2020.285519125683_Ih=2020.285519125683,Israel/2113601/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/2115976/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/701002442/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/2113603/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/2115990/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/2107137/2020_2020.285519125683_Ih=2020.285519125683,Israel/2113155/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/2113256/2020_2020.285519125683_Ih=2020.285519125683,Israel/2113678/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/2113161/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/2115964/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/2123853/2020_2020.301912568306_Ih=2020.301912568306,Israel/2123863/2020_2020.301912568306_Ih=2020.301912568306,Israel/701002456/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/701002314/2020_2020.2199453551912_Il=2020.2199453551912,Israel/701002327/2020_2020.2226775956285_Ih=2020.2226775956285,SaudiArabia/SCDC-3324/2020_2020.1898907103825_exog=2020.1898907103825,Israel/2115968/2020_2020.2909836065573_Il=2020.2909836065573,Israel/701002792/2020_2020.2418032786886_Il=2020.2418032786886,Netherlands/Zeewolde-1365080/2020_2020.1680327868853_exog=2020.1680327868853,Luxembourg/Lux1/2020_2020.1625683060108_exog=2020.1625683060108,Netherlands/Flevoland-1/2020_2020.1871584699454_exog=2020.1871584699454,Netherlands/ZuidHolland-13/2020_2020.1789617486338_exog=2020.1789617486338,Netherlands/Overijssel-2/2020_2020.1707650273224_exog=2020.1707650273224,Netherlands/Utrecht-14/2020_2020.1734972677596_exog=2020.1734972677596,Netherlands/ZuidHolland-30/2020_2020.1926229508197_exog=2020.1926229508197,Netherlands/NoordBrabant-26/2020_2020.1789617486338_exog=2020.1789617486338,Netherlands/Drente-1/2020_2020.23087431694_exog=2020.23087431694,Scotland/CVR77/2020_2020.1707650273224_exog=2020.1707650273224,Netherlands/NoordBrabant-56/2020_2020.1871584699454_exog=2020.1871584699454,Korea/KCDC2004/2020_2020.0887978142077_exog=2020.0887978142077,Kuwait/KU17/2020_2020.1680327868853_exog=2020.1680327868853,USA/WI-256/2020_2020.2636612021859_exog=2020.2636612021859,Beijing/BJ288/2020_2020.077868852459_exog=2020.077868852459,USA/NC-200173/2020_2020.2527322404371_exog=2020.2527322404371,USA/AZ-WL171/2020_2020.214480874317_exog=2020.214480874317,Thailand/Bangkok-0020/2020_2020.2199453551912_exog=2020.2199453551912,USA/WI-142/2020_2020.2745901639344_exog=2020.2745901639344,USA/NY-Wadsworth-11330-01/2020_2020.181693989071_exog=2020.181693989071,Canada/MB-37/2020_2020.2117486338798_exog=2020.2117486338798,USA/TX-HMH0452/2020_2020.2554644808743_exog=2020.2554644808743,Germany/NRW-53/2020_2020.200819672131_exog=2020.200819672131,Germany/NRW-42-2/2020_2020.214480874317_exog=2020.214480874317,Sweden/20-08146/2020_2020.1926229508197_exog=2020.1926229508197,Denmark/ALAB-HH05/2020_2020.1898907103825_exog=2020.1898907103825,Germany/NRW-42-3/2020_2020.217213114754_exog=2020.217213114754,USA/NY-NYUMC228/2020_2020.2554644808743_exog=2020.2554644808743,USA/NY-NYUMC252/2020_2020.2554644808743_exog=2020.2554644808743,Sweden/20-50315/2020_2020.1953551912568_exog=2020.1953551912568,France/HF1684/2020_2020.1625683060108_exog=2020.1625683060108,France/PL1643/2020_2020.1543715846994_exog=2020.1543715846994,USA/CT-Yale-099/2020_2020.266393442623_exog=2020.266393442623,France/HF1871/2020_2020.1707650273224_exog=2020.1707650273224,England/NOTT-10E010/2020_2020.2090163934427_exog=2020.2090163934427,Russia/Moscow-62505/2020_2020.1926229508197_exog=2020.1926229508197,Wuhan-Hu-1/2019_2019.9849315068493_exog=2019.9849315068493,Belgium/ULG-10057/2020_2020.2609289617487_exog=2020.2609289617487,Russia/Buryatia-84508/2020_2020.2363387978141_exog=2020.2363387978141,Hungary/SRC-00186/2020_2020.2226775956285_exog=2020.2226775956285,Switzerland/42169171/2020_2020.1571038251366_exog=2020.1571038251366,Germany/NRW-011/2020_2020.1707650273224_exog=2020.1707650273224,Scotland/EDB006/2020_2020.1871584699454_exog=2020.1871584699454,France/HF1993/2020_2020.1734972677596_exog=2020.1734972677596,France/HF2060/2020_2020.1762295081967_exog=2020.1762295081967,France/B1623/2020_2020.1543715846994_exog=2020.1543715846994,Canada/BC-41851/2020_2020.1680327868853_exog=2020.1680327868853,USA/WA-S243/2020_2020.1625683060108_exog=2020.1625683060108,USA/WA-S96/2020_2020.1598360655737_exog=2020.1598360655737,Guangzhou/GZMU0010/2020_2020.1024590163934_exog=2020.1024590163934,Luxembourg/LNS5677421/2020_2020.2363387978141_exog=2020.2363387978141,USA/HI-4970/2020_2020.1762295081967_exog=2020.1762295081967,USA/NH-0008/2020_2020.1680327868853_exog=2020.1680327868853,USA/FL-5125/2020_2020.1598360655737_exog=2020.1598360655737,Finland/FIN-455/2020_2020.1844262295083_exog=2020.1844262295083,Canada/ON-PHL8751/2020_2020.1625683060108_exog=2020.1625683060108,France/B2343/2020_2020.1789617486338_exog=2020.1789617486338,France/ARA09451/2020_2020.2035519125684_exog=2020.2035519125684,France/ARA09686/2020_2020.2062841530055_exog=2020.2062841530055,India/781/2020_2020.1707650273224_exog=2020.1707650273224,France/ARA10910/2020_2020.2117486338798_exog=2020.2117486338798,DRC/KN-13/2020_2020.1871584699454_exog=2020.1871584699454,Australia/VIC48/2020_2020.1953551912568_exog=2020.1953551912568,USA/VA-DCLS-0058/2020_2020.2472677595629_exog=2020.2472677595629,France/HF2393/2020_2020.1953551912568_exog=2020.1953551912568,Poland/PL-P9/2020_2020.2390710382513_exog=2020.2390710382513,Switzerland/AG0361/2020_2020.1571038251366_exog=2020.1571038251366,Thailand/Bangkok-0045/2020_2020.2390710382513_exog=2020.2390710382513,Indonesia/JKT-EIJK0141/2020_2020.2090163934427_exog=2020.2090163934427,Turkey/HSGM-7718/2020_2020.2199453551912_exog=2020.2199453551912,Switzerland/GE6065/2020_2020.2636612021859_exog=2020.2636612021859,Australia/VIC130/2020_2020.2199453551912_exog=2020.2199453551912,India/NCDC-01604/2020_2020.2090163934427_exog=2020.2090163934427,Guangdong/20SF1159/2020_2020.0833333333333_exog=2020.0833333333333,USA/UN-UW-581/2020_2020.1953551912568_exog=2020.1953551912568,Australia/VIC492/2020_2020.2254098360656_exog=2020.2254098360656,Philippines/RITM-02/2020_2020.1926229508197_exog=2020.1926229508197,Singapore/65/2020_2020.26912568306_exog=2020.26912568306,Luxembourg/LNS7841004/2020_2020.2527322404371_exog=2020.2527322404371,Korea/KCDC2016/2020_2020.1325136612022_exog=2020.1325136612022,Brazil/RJ-352/2020_2020.1762295081967_exog=2020.1762295081967,Chile/Santiago-op2d1/2020_2020.1789617486338_exog=2020.1789617486338,Spain/CastillayLeon201323/2020_2020.1653005464482_exog=2020.1653005464482,Senegal/136/2020_2020.198087431694_exog=2020.198087431694,Philippines/RITM-04/2020_2020.1844262295083_exog=2020.1844262295083,HongKong/VM20002493/2020_2020.1079234972678_exog=2020.1079234972678,Israel/SH16/2020_2020.2445355191257_Ih=2020.2445355191257,Brazil/AL-837/2020_2020.2117486338798_exog=2020.2117486338798,Brazil/BA-312/2020_2020.1734972677596_exog=2020.1734972677596,Israel/2115980/2020_2020.2909836065573_Ih=2020.2909836065573,DRC/2120/2020_2020.2800546448088_exog=2020.2800546448088,env/Beijing/BJ2454/2020_2020.200819672131_exog=2020.200819672131,Egypt/NRC-03/2020_2020.2117486338798_exog=2020.2117486338798,Finland/13M83/2020_2020.198087431694_exog=2020.198087431694,Israel/701002407/2020_2020.2254098360656_Ih=2020.2254098360656,USA/WI-129/2020_2020.2636612021859_exog=2020.2636612021859,Israel/2116859/2020_2020.301912568306_Il=2020.301912568306,Netherlands/Diemen-1363454/2020_2020.1598360655737_exog=2020.1598360655737,Spain/Valencia99/2020_2020.2090163934427_exog=2020.2090163934427,Israel/1639953/2020_2020.233606557377_Ih=2020.233606557377,Israel/13077498/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/13077803/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/2020084/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/13075790/2020_2020.2445355191257_Il=2020.2445355191257,Israel/2099251/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/2089697/2020_2020.25_Ih=2020.25,Israel/2086022/2020_2020.25_Ih=2020.25,Israel/51146500/2020_2020.2609289617487_Ih=2020.2609289617487,Israel/2046815/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/2047004/2020_2020.2363387978141_Ih=2020.2363387978141,Israel/2086045/2020_2020.25_Ih=2020.25,Israel/2089866/2020_2020.25_Ih=2020.25,Israel/130711116/2020_2020.3046448087432_Ih=2020.3046448087432,Israel/13075735/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2089698/2020_2020.25_Ih=2020.25,Israel/2047883/2020_2020.2472677595629_Ih=2020.2472677595629,Israel/130710067/2020_2020.285519125683_Ih=2020.285519125683,Israel/2047604/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/2023920/2020_2020.2090163934427_Il=2020.2090163934427,Israel/2089861/2020_2020.25_Ih=2020.25,Israel/51140271/2020_2020.2117486338798_Ih=2020.2117486338798,Israel/13075719/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/130710097/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/990059232/2020_2020.23087431694_Il=2020.23087431694,Israel/130710062/2020_2020.285519125683_Ih=2020.285519125683,Israel/990059251/2020_2020.23087431694_Ih=2020.23087431694,Israel/130711104/2020_2020.301912568306_Ih=2020.301912568306,Israel/990059203/2020_2020.23087431694_Ih=2020.23087431694,Israel/990059233/2020_2020.23087431694_Ih=2020.23087431694,Israel/13077494/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/2020068/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/2020063/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/13077497/2020_2020.2527322404371_Il=2020.2527322404371,Israel/2023922/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/2047772/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2089863/2020_2020.25_Il=2020.25,Israel/2047016/2020_2020.233606557377_Ih=2020.233606557377,Israel/130710159/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/130710390/2020_2020.2937158469945_Ih=2020.2937158469945,Israel/2047145/2020_2020.233606557377_Ih=2020.233606557377,Israel/13077711/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/13075788/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2047188/2020_2020.233606557377_Ih=2020.233606557377,Israel/2047418/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/51137031/2020_2020.1653005464482_Ih=2020.1653005464482,Israel/2020087/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/51140279/2020_2020.2117486338798_Ih=2020.2117486338798,Israel/2099421/2020_2020.2527322404371_Il=2020.2527322404371,Israel/990333068/2020_2020.2281420765028_Ih=2020.2281420765028,Israel/13077558/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/130710211/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/130710414/2020_2020.2937158469945_Ih=2020.2937158469945,Israel/130711082/2020_2020.301912568306_Ih=2020.301912568306,Israel/51141121/2020_2020.2226775956285_Ih=2020.2226775956285,Israel/51146355/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/130711112/2020_2020.3046448087432_Ih=2020.3046448087432,Israel/1639996/2020_2020.233606557377_Ih=2020.233606557377,Israel/2047364/2020_2020.2390710382513_Ih=2020.2390710382513,Israel/990059202/2020_2020.23087431694_Ih=2020.23087431694,Israel/130710099/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/13077377/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/990059252/2020_2020.23087431694_Il=2020.23087431694,Israel/13077562/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/2047586/2020_2020.2418032786886_Il=2020.2418032786886,Israel/130710716/2020_2020.299180327869_Ih=2020.299180327869,Israel/2047738/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/13077564/2020_2020.2554644808743_Il=2020.2554644808743,Israel/13077823/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/13077413/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/13075832/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/13077875/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/130711367/2020_2020.3073770491803_Il=2020.3073770491803,Israel/2089723/2020_2020.25_Ih=2020.25,Israel/2099018/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/51146669/2020_2020.2609289617487_Ih=2020.2609289617487,Israel/990300860/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/13077846/2020_2020.2581967213114_Il=2020.2581967213114,Israel/13077847/2020_2020.2581967213114_Il=2020.2581967213114,Israel/990307712/2020_2020.233606557377_Ih=2020.233606557377,Israel/2089718/2020_2020.25_Ih=2020.25,Israel/51145482/2020_2020.2609289617487_Ih=2020.2609289617487,Israel/990430264/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/2020078/2020_2020.2090163934427_Il=2020.2090163934427,Israel/2086012/2020_2020.25_Il=2020.25,Israel/2089383/2020_2020.25_Ih=2020.25,Israel/2020038/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/2047011/2020_2020.233606557377_Ih=2020.233606557377,Israel/2089712/2020_2020.25_Ih=2020.25,Israel/2089812/2020_2020.25_Ih=2020.25,Israel/2089366/2020_2020.25_Ih=2020.25,Israel/2099416/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/2086001/2020_2020.25_Ih=2020.25,Israel/2046614/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/2089375/2020_2020.25_Ih=2020.25,Israel/51146683/2020_2020.2609289617487_Ih=2020.2609289617487,Israel/13077560/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/2089368/2020_2020.25_Ih=2020.25,Israel/990430265/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/13075703/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/51140539/2020_2020.214480874317_Il=2020.214480874317,Israel/51141014/2020_2020.2226775956285_Ih=2020.2226775956285,Israel/51145198/2020_2020.25_Il=2020.25,Israel/51144342/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2046434/2020_2020.25_Ih=2020.25,Israel/13077882/2020_2020.2581967213114_Ih=2020.2581967213114,Israel/2086034/2020_2020.25_Ih=2020.25,Israel/990333189/2020_2020.233606557377_Ih=2020.233606557377,Israel/990059238/2020_2020.23087431694_Ih=2020.23087431694,Israel/51140315/2020_2020.2117486338798_Ih=2020.2117486338798,Israel/51140836/2020_2020.217213114754_Ih=2020.217213114754,Israel/990300724/2020_2020.25_Ih=2020.25,Israel/51140028/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/13075782/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/130710643/2020_2020.299180327869_Ih=2020.299180327869,Israel/2047749/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2047927/2020_2020.2472677595629_Ih=2020.2472677595629,Israel/2046616/2020_2020.2527322404371_Il=2020.2527322404371,Israel/13077511/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/130710217/2020_2020.2909836065573_Ih=2020.2909836065573,Israel/13077723/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/2086008/2020_2020.25_Ih=2020.25,Israel/130710157/2020_2020.2882513661202_Ih=2020.2882513661202,Israel/13077383/2020_2020.2527322404371_Il=2020.2527322404371,Israel/2046171/2020_2020.2472677595629_Ih=2020.2472677595629,Israel/2086033/2020_2020.25_Il=2020.25,Israel/13077726/2020_2020.2554644808743_Ih=2020.2554644808743,Israel/990059204/2020_2020.23087431694_Ih=2020.23087431694,Israel/2089839/2020_2020.25_Ih=2020.25,Israel/2089852/2020_2020.25_Ih=2020.25,Israel/13077510/2020_2020.2554644808743_Il=2020.2554644808743,Israel/2099159/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/51146503/2020_2020.2609289617487_Ih=2020.2609289617487,Israel/2099019/2020_2020.2527322404371_Ih=2020.2527322404371,Israel/990059244/2020_2020.23087431694_Il=2020.23087431694,Israel/51140068/2020_2020.2117486338798_Ih=2020.2117486338798,Israel/13077840/2020_2020.2581967213114_Il=2020.2581967213114,Israel/51137844/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/51141225/2020_2020.2226775956285_Ih=2020.2226775956285,Israel/990300681/2020_2020.2445355191257_Ih=2020.2445355191257,Israel/2020069/2020_2020.2090163934427_Il=2020.2090163934427,Israel/2047392/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/2047567/2020_2020.2418032786886_Ih=2020.2418032786886,Israel/2046548/2020_2020.25_Ih=2020.25,Israel/2086004/2020_2020.25_Il=2020.25,Israel/2020051/2020_2020.2090163934427_Ih=2020.2090163934427,Israel/990300691/2020_2020.2472677595629_Il=2020.2472677595629,Israel/2089380/2020_2020.25_Ih=2020.25,Israel/130711417/2020_2020.3073770491803_Ih=2020.3073770491803,Israel/130710644/2020_2020.299180327869_Ih=2020.299180327869,Germany/NRW-14/2020_2020.1926229508197_exog=2020.1926229508197,Denmark/ALAB-SSI481/2020_2020.23087431694_exog=2020.23087431694,Denmark/ALAB-SSI490/2020_2020.2199453551912_exog=2020.2199453551912,Denmark/ALAB-SSI184/2020_2020.1871584699454_exog=2020.1871584699454,Denmark/ALAB-SSI189/2020_2020.1871584699454_exog=2020.1871584699454,Belgium/ITM-C030/2020_2020.23087431694_exog=2020.23087431694,USA/MD-HP024/2020_2020.217213114754_exog=2020.217213114754,USA/NY-NYUMC323/2020_2020.2527322404371_exog=2020.2527322404371,USA/WY-WYPHL015/2020_2020.2117486338798_exog=2020.2117486338798,USA/WY-WYPHL007/2020_2020.2035519125684_exog=2020.2035519125684,USA/CT-Yale-084/2020_2020.2636612021859_exog=2020.2636612021859,Belgium/UGent-34/2020_2020.233606557377_exog=2020.233606557377,USA/TX-HMH0159/2020_2020.2254098360656_exog=2020.2254098360656,Belgium/UGent-37/2020_2020.2363387978141_exog=2020.2363387978141,USA/TX-HMH097/2020_2020.214480874317_exog=2020.214480874317,England/CAMB-78470/2020_2020.2609289617487_exog=2020.2609289617487,Norway/1955/2020_2020.1926229508197_exog=2020.1926229508197,Australia/QLDID920/2020_2020.1926229508197_exog=2020.1926229508197,Poland/1104795/2020_2020.2117486338798_exog=2020.2117486338798,Taiwan/NTU09/2020_2020.200819672131_exog=2020.200819672131,USA/MA-2652/2020_2020.1789617486338_exog=2020.1789617486338,USA/MA-3614/2020_2020.1789617486338_exog=2020.1789617486338,France/IDF2989/2020_2020.214480874317_exog=2020.214480874317,France/HF2748/2020_2020.2090163934427_exog=2020.2090163934427,Poland/1105644/2020_2020.2117486338798_exog=2020.2117486338798,USA/CA7/2020_2020.0997267759562_exog=2020.0997267759562,Spain/Andalucia201617/2020_2020.1762295081967_exog=2020.1762295081967,Belgium/VM-0325171/2020_2020.23087431694_exog=2020.23087431694,Belgium/AGR-0324174/2020_2020.2281420765028_exog=2020.2281420765028,Canada/NS-13/2020_2020.198087431694_exog=2020.198087431694,Scotland/CVR704/2020_2020.233606557377_exog=2020.233606557377,USA/WI-UW-261/2020_2020.233606557377_exog=2020.233606557377,USA/MN67-MDH67/2020_2020.200819672131_exog=2020.200819672131,USA/WI-233/2020_2020.2363387978141_exog=2020.2363387978141,Netherlands/Friesland-3/2020_2020.2390710382513_exog=2020.2390710382513,Netherlands/NoordBrabant-103/2020_2020.1871584699454_exog=2020.1871584699454,USA/MN62-MDH62/2020_2020.200819672131_exog=2020.200819672131,DRC/KN-0017/2020_2020.1926229508197_exog=2020.1926229508197,USA/CT-Yale-116/2020_2020.2745901639344_exog=2020.2745901639344,USA/CT-Yale-120/2020_2020.2773224043715_exog=2020.2773224043715,Jordan/SR-054/2020_2020.2445355191257_exog=2020.2445355191257,Greece/148/2020_2020.1871584699454_exog=2020.1871584699454,Portugal/PT0017/2020_2020.1926229508197_exog=2020.1926229508197,Belgium/GL-030546/2020_2020.1762295081967_exog=2020.1762295081967,USA/AK-PHL013/2020_2020.214480874317_exog=2020.214480874317,Hangzhou/HZCDC0135/2020_2020.058743169399_exog=2020.058743169399,Belgium/030959/2020_2020.1871584699454_exog=2020.1871584699454,Israel/ISR-IT0320/2020_2020.1653005464482_Il=2020.1653005464482,USA/CA-CZB0707/2020_2020.2254098360656_exog=2020.2254098360656,France/ARA12877/2020_2020.2254098360656_exog=2020.2254098360656,France/ARA11995/2020_2020.2199453551912_exog=2020.2199453551912,France/ARA11997/2020_2020.2199453551912_exog=2020.2199453551912,USA/NY-PV09060/2020_2020.217213114754_exog=2020.217213114754,USA/NY-PV09069/2020_2020.217213114754_exog=2020.217213114754,CostaRica/04/2020_2020.2117486338798_exog=2020.2117486338798,Israel/ISR-JP0320/2020_2020.146174863388_Ih=2020.146174863388,Belgium/HAA-030953/2020_2020.1871584699454_exog=2020.1871584699454,Shanghai/SH0040/2020_2020.0806010928961_exog=2020.0806010928961,Japan/P3-1/2020_2020.1871584699454_exog=2020.1871584699454,Singapore/24/2020_2020.1734972677596_exog=2020.1734972677596,Singapore/26/2020_2020.1762295081967_exog=2020.1762295081967,USA/UT-099/2020_2020.200819672131_exog=2020.200819672131,USA/VA-DCLS-0003/2020_2020.2090163934427_exog=2020.2090163934427,Australia/VIC283/2020_2020.2226775956285_exog=2020.2226775956285,PuertoRico/CDC-S5/2020_2020.2254098360656_exog=2020.2254098360656,Greece/145/2020_2020.2062841530055_exog=2020.2062841530055,Finland/13M58/2020_2020.198087431694_exog=2020.198087431694,Netherlands/NoordBrabant-97/2020_2020.214480874317_exog=2020.214480874317,Ghana/2986-S10/2020_2020.2472677595629_exog=2020.2472677595629,USA/VA-DCLS-0033/2020_2020.214480874317_exog=2020.214480874317,England/20139047504/2020_2020.2390710382513_exog=2020.2390710382513,Shanghai/SH0037/2020_2020.0806010928961_exog=2020.0806010928961,Taiwan/CGMH-CGU-02/2020_2020.094262295082_exog=2020.09426229508" >
+                <taxa id="TaxonSet.july22_TMRCA_Import_Final_0.8_0.8" spec="TaxonSet">
+                    <alignment idref="july22_TMRCA_Import_Final_0.8_0.8"/>
+                </taxa>
+            </trait>
+            <taxonset idref="TaxonSet.july22_TMRCA_Import_Final_0.8_0.8"/>
+        </tree>
+        <!-- Initial values -->
+        <parameter id="clockRate.c:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="5.0E-4" name="stateNode" upper="0.002">0.0018</parameter>
+        <parameter id="kappa.s:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="0.0" name="stateNode">2.0</parameter>
+        <parameter id="gammaShape.s:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+        <parameter id="seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="1.0" name="stateNode">5</parameter>
+        <parameter id="seir.a.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="0.0" upper="2.0" name="stateNode">1</parameter>
+        <parameter id="seir.exog.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="seir.E.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
+        <parameter id="freqParameter.s:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+    </state>
+
+    <!-- Maximum likelihood starting tree from IQTree -->
+    <init id="NewickTree.t:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.util.TreeParser" estimate="false" initial="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" newick="(Wuhan-Hu-1/2019_2019.9849315068493_exog:0.00000,(Guangdong/20SF1159/2020_2020.0833333333333_exog:0.05119,(Taiwan/CGMH-CGU-02/2020_2020.094262295082_exog:0.04285,Beijing/BJ288/2020_2020.077868852459_exog:0.02646,(USA/WI-129/2020_2020.2636612021859_exog:0.16393,USA/CA7/2020_2020.0997267759562_exog:0.00000)NODE_0000090:0.04832,(Senegal/136/2020_2020.198087431694_exog:0.03279,Brazil/RJ-352/2020_2020.1762295081967_exog:0.01093,Chile/Santiago-op2d1/2020_2020.1789617486338_exog:0.01366,Spain/CastillayLeon201323/2020_2020.1653005464482_exog:0.00000)NODE_0000093:0.11389,((Spain/Andalucia201617/2020_2020.1762295081967_exog:0.00551,Greece/145/2020_2020.2062841530055_exog:0.03556)NODE_0000091:0.10526,(Canada/BC-41851/2020_2020.1680327868853_exog:0.02609,(Australia/VIC130/2020_2020.2199453551912_exog:0.06495,USA/WA-S96/2020_2020.1598360655737_exog:0.00484,(USA/WA-S243/2020_2020.1625683060108_exog:0.00728,(USA/VA-DCLS-0003/2020_2020.2090163934427_exog:0.03920,USA/UN-UW-581/2020_2020.1953551912568_exog:0.02554)NODE_0000014:0.01454)NODE_0000013:0.00028)NODE_0000097:0.01306)NODE_0000096:0.07648)NODE_0000007:0.01405)NODE_0000086:0.01927,(HongKong/VM20002493/2020_2020.1079234972678_exog:0.05718,Shanghai/SH0037/2020_2020.0806010928961_exog:0.02986,(Shanghai/SH0040/2020_2020.0806010928961_exog:0.02213,(Israel/990300681/2020_2020.2445355191257_Ih:0.16571,(Korea/KCDC2016/2020_2020.1325136612022_exog:0.03179,((England/20139047504/2020_2020.2390710382513_exog:0.08209,Australia/VIC492/2020_2020.2254098360656_exog:0.06843)NODE_0000019:0.00247,((Netherlands/NoordBrabant-56/2020_2020.1871584699454_exog:0.01928,(Belgium/HAA-030953/2020_2020.1871584699454_exog:0.01055,Luxembourg/LNS7841004/2020_2020.2527322404371_exog:0.07612)NODE_0000022:0.00873)NODE_0000021:0.01223,(Israel/701002407/2020_2020.2254098360656_Ih:0.05733,Israel/13077840/2020_2020.2581967213114_Il:0.09011,(Israel/990059238/2020_2020.23087431694_Ih:0.05378,(Israel/51137844/2020_2020.2090163934427_Ih:0.01387,Israel/51141225/2020_2020.2226775956285_Ih:0.02753)NODE_0000081:0.01805,(Israel/51140315/2020_2020.2117486338798_Ih:0.00003,(Israel/990300724/2020_2020.25_Ih:0.03279,Israel/51140836/2020_2020.217213114754_Ih:0.00000)NODE_0000027:0.00550)NODE_0000082:0.03462)NODE_0000079:0.00901)NODE_0000077:0.01243)NODE_0000074:0.00114)NODE_0000020:0.05378)NODE_0000071:0.02191)NODE_0000070:0.02035)NODE_0000015:0.00773)NODE_0000067:0.01860,((Israel/ISR-JP0320/2020_2020.146174863388_Ih:0.06893,(Kuwait/KU17/2020_2020.1680327868853_exog:0.01119,India/NCDC-01604/2020_2020.2090163934427_exog:0.05217)NODE_0000061:0.07960,(Philippines/RITM-04/2020_2020.1844262295083_exog:0.01400,Israel/2020069/2020_2020.2090163934427_Il:0.03859,(Singapore/65/2020_2020.26912568306_exog:0.07650,Philippines/RITM-02/2020_2020.1926229508197_exog:0.00000)NODE_0000006:0.02219)NODE_0000062:0.09319)NODE_0000059:0.03239,((Hangzhou/HZCDC0135/2020_2020.058743169399_exog:0.00010,Guangzhou/GZMU0010/2020_2020.1024590163934_exog:0.04381)NODE_0000029:0.00689,((Korea/KCDC2004/2020_2020.0887978142077_exog:0.00347,((Indonesia/JKT-EIJK0141/2020_2020.2090163934427_exog:0.04789,Netherlands/NoordBrabant-97/2020_2020.214480874317_exog:0.05335)NODE_0000033:0.00679,((Singapore/24/2020_2020.1734972677596_exog:0.00981,(Israel/51140028/2020_2020.2090163934427_Ih:0.01639,Germany/NRW-14/2020_2020.1926229508197_exog:0.00000)NODE_0000085:0.02893)NODE_0000035:0.00818,((Israel/13075782/2020_2020.2445355191257_Ih:0.02485,USA/WI-256/2020_2020.2636612021859_exog:0.04397)NODE_0000038:0.05615,(USA/WI-233/2020_2020.2363387978141_exog:0.06613,Singapore/26/2020_2020.1762295081967_exog:0.00602)NODE_0000039:0.00667)NODE_0000037:0.00803)NODE_0000034:0.00117)NODE_0000032:0.06900)NODE_0000031:0.02820,(USA/UT-099/2020_2020.200819672131_exog:0.12218,((Israel/2115990/2020_2020.2909836065573_Ih:0.11591,Israel/701002456/2020_2020.2281420765028_Ih:0.05307)NODE_0000045:0.06243,(Netherlands/NoordBrabant-103/2020_2020.1871584699454_exog:0.05574,Belgium/GL-030546/2020_2020.1762295081967_exog:0.04481,(USA/HI-4970/2020_2020.1762295081967_exog:0.01682,Spain/Valencia99/2020_2020.2090163934427_exog:0.04961,(Israel/2047016/2020_2020.233606557377_Ih:0.00266,Belgium/UGent-37/2020_2020.2363387978141_exog:0.00539)NODE_0000106:0.07154)NODE_0000104:0.02799,(Switzerland/AG0361/2020_2020.1571038251366_exog:0.00213,Switzerland/GE6065/2020_2020.2636612021859_exog:0.10869,(env/Beijing/BJ2454/2020_2020.200819672131_exog:0.02893,Belgium/UGent-34/2020_2020.233606557377_exog:0.06172)NODE_0000127:0.01692,((Norway/1955/2020_2020.1926229508197_exog:0.00314,Israel/990059252/2020_2020.23087431694_Il:0.04140)NODE_0000052:0.03432,(Russia/Moscow-62505/2020_2020.1926229508197_exog:0.01682,USA/MN67-MDH67/2020_2020.200819672131_exog:0.02502)NODE_0000053:0.02064)NODE_0000051:0.00019)NODE_0000121:0.02355,((Belgium/AGR-0324174/2020_2020.2281420765028_exog:0.05808,Australia/VIC283/2020_2020.2226775956285_exog:0.05262,(DRC/2120/2020_2020.2800546448088_exog:0.10321,(France/ARA09686/2020_2020.2062841530055_exog:0.01392,France/ARA09451/2020_2020.2035519125684_exog:0.01119)NODE_0000048:0.01551)NODE_0000047:0.00679)NODE_0000117:0.01583,((India/781/2020_2020.1707650273224_exog:0.01591,Luxembourg/Lux1/2020_2020.1625683060108_exog:0.00771)NODE_0000055:0.00063,((Israel/13077383/2020_2020.2527322404371_Il:0.09165,(Poland/PL-P9/2020_2020.2390710382513_exog:0.06831,Scotland/CVR77/2020_2020.1707650273224_exog:0.00000,(Israel/2107132/2020_2020.285519125683_Il:0.04357,Israel/2099421/2020_2020.2527322404371_Il:0.01079)NODE_0000114:0.07118)NODE_0000112:0.00968)NODE_0000057:0.00604,((Netherlands/Zeewolde-1365080/2020_2020.1680327868853_exog:0.00000,USA/TX-HMH0159/2020_2020.2254098360656_exog:0.05738)NODE_0000063:0.00642,((USA/AK-PHL013/2020_2020.214480874317_exog:0.02753,England/NOTT-10E010/2020_2020.2090163934427_exog:0.02206)NODE_0000065:0.01641,((Israel/990333068/2020_2020.2281420765028_Ih:0.00000,Israel/701002455/2020_2020.2281420765028_Ih:0.00000)NODE_0000068:0.04437,(Australia/QLDID920/2020_2020.1926229508197_exog:0.00000,Israel/130710644/2020_2020.299180327869_Ih:0.10656)NODE_0000069:0.00885)NODE_0000066:0.01323)NODE_0000064:0.00893)NODE_0000060:0.00657)NODE_0000056:0.00081)NODE_0000054:0.00000)NODE_0000098:0.02280,(Israel/2116859/2020_2020.301912568306_Il:0.15800,Netherlands/Diemen-1363454/2020_2020.1598360655737_exog:0.01592,Netherlands/ZuidHolland-13/2020_2020.1789617486338_exog:0.03505,Brazil/AL-837/2020_2020.2117486338798_exog:0.06783,Belgium/030959/2020_2020.1871584699454_exog:0.04324,(Netherlands/Utrecht-14/2020_2020.1734972677596_exog:0.01422,Scotland/EDB006/2020_2020.1871584699454_exog:0.02788,(Germany/NRW-011/2020_2020.1707650273224_exog:0.00000,USA/CA-CZB0707/2020_2020.2254098360656_exog:0.05464)NODE_0000072:0.01148)NODE_0000025:0.01537,((Israel/51137031/2020_2020.1653005464482_Ih:0.00189,Israel/2020087/2020_2020.2090163934427_Ih:0.04561)NODE_0000075:0.00935,((Israel/51140539/2020_2020.214480874317_Il:0.04372,Netherlands/Overijssel-2/2020_2020.1707650273224_exog:0.00000)NODE_0000078:0.00940,((England/CAMB-78470/2020_2020.2609289617487_exog:0.08318,Netherlands/NoordBrabant-26/2020_2020.1789617486338_exog:0.00122)NODE_0000083:0.00874,((Greece/148/2020_2020.1871584699454_exog:0.00000,Portugal/PT0017/2020_2020.1926229508197_exog:0.00546)NODE_0000087:0.01149,((Israel/51140279/2020_2020.2117486338798_Ih:0.00000,Russia/Buryatia-84508/2020_2020.2363387978141_exog:0.02459)NODE_0000089:0.01924,((Belgium/ULG-10057/2020_2020.2609289617487_exog:0.01888,Israel/130710390/2020_2020.2937158469945_Ih:0.05167)NODE_0000094:0.01876,(Israel/13075788/2020_2020.2445355191257_Ih:0.00539,Jordan/SR-054/2020_2020.2445355191257_exog:0.00539)NODE_0000095:0.01585)NODE_0000092:0.03078)NODE_0000088:0.01684)NODE_0000084:0.00666)NODE_0000080:0.00764)NODE_0000076:0.00731)NODE_0000073:0.01015,(Brazil/BA-312/2020_2020.1734972677596_exog:0.02307,((Switzerland/42169171/2020_2020.1571038251366_exog:0.00000,(Israel/990430265/2020_2020.2418032786886_Ih:0.04797,Israel/130710157/2020_2020.2882513661202_Ih:0.09442,(Israel/2113174/2020_2020.2882513661202_Il:0.05764,Israel/13075703/2020_2020.2418032786886_Ih:0.01119)NODE_0000005:0.03678)NODE_0000004:0.03673)NODE_0000145:0.00141,(Israel/ISR-IT0320/2020_2020.1653005464482_Il:0.00961,(USA/FL-5125/2020_2020.1598360655737_exog:0.00000,(USA/MN62-MDH62/2020_2020.200819672131_exog:0.04143,(Israel/51144342/2020_2020.2445355191257_Ih:0.07114,((Israel/51141014/2020_2020.2226775956285_Ih:0.00000,Israel/51145198/2020_2020.25_Il:0.02732)NODE_0000017:0.03473,(Israel/701002431/2020_2020.2281420765028_Il:0.03426,(Israel/2047188/2020_2020.233606557377_Ih:0.03325,(Israel/2047418/2020_2020.2418032786886_Ih:0.03282,(Israel/SH16/2020_2020.2445355191257_Ih:0.03085,((Israel/13077711/2020_2020.2554644808743_Ih:0.02455,Israel/2047145/2020_2020.233606557377_Ih:0.00270)NODE_0000111:0.01141,(Hungary/SRC-00186/2020_2020.2226775956285_exog:0.00000,(Israel/13075914/2020_2020.2445355191257_Ih:0.00539,Israel/13075882/2020_2020.2445355191257_Ih:0.00539)NODE_0000115:0.01646)NODE_0000113:0.00317)NODE_0000110:0.00581)NODE_0000109:0.00470)NODE_0000108:0.00863)NODE_0000107:0.00648)NODE_0000105:0.00593)NODE_0000103:0.01456)NODE_0000102:0.01401)NODE_0000101:-0.00045)NODE_0000100:0.00414)NODE_0000099:0.00000)NODE_0000134:0.00527)NODE_0000018:0.00651)NODE_0000042:0.01249,((Israel/13075735/2020_2020.2445355191257_Ih:0.05210,(Israel/51141121/2020_2020.2226775956285_Ih:0.00000,(Israel/2115976/2020_2020.2909836065573_Ih:0.05103,Israel/51145482/2020_2020.2609289617487_Ih:0.02098)NODE_0000170:0.01727)NODE_0000152:0.03024)NODE_0000118:0.06043,(Canada/ON-PHL8751/2020_2020.1625683060108_exog:0.00322,Japan/P3-1/2020_2020.1871584699454_exog:0.02781,Israel/2115968/2020_2020.2909836065573_Il:0.13164,Israel/701002442/2020_2020.2281420765028_Ih:0.06880,(Finland/13M58/2020_2020.198087431694_exog:0.01117,SaudiArabia/SCDC-3324/2020_2020.1898907103825_exog:0.00297,Egypt/NRC-03/2020_2020.2117486338798_exog:0.02483)NODE_0000139:0.02757,(Israel/51140068/2020_2020.2117486338798_Ih:0.01966,(Israel/2020051/2020_2020.2090163934427_Ih:0.00000,Turkey/HSGM-7718/2020_2020.2199453551912_exog:0.01093)NODE_0000123:0.01692)NODE_0000141:0.03275,(Israel/2047567/2020_2020.2418032786886_Ih:0.07034,(Israel/2113603/2020_2020.2882513661202_Ih:0.07705,((Israel/2107681/2020_2020.285519125683_Ih:0.04315,Israel/2089863/2020_2020.25_Il:0.00763)NODE_0000150:0.01756,(Israel/2047772/2020_2020.2445355191257_Ih:0.01391,Israel/13077560/2020_2020.2554644808743_Ih:0.02484)NODE_0000128:0.00582)NODE_0000126:0.01361)NODE_0000125:0.03973)NODE_0000124:0.01212)NODE_0000136:0.02734,(France/HF1993/2020_2020.1734972677596_exog:0.03076,Canada/MB-37/2020_2020.2117486338798_exog:0.06901,((USA/MA-2652/2020_2020.1789617486338_exog:0.01960,USA/MA-3614/2020_2020.1789617486338_exog:0.01960)NODE_0000183:0.00531,(((DRC/KN-0017/2020_2020.1926229508197_exog:0.01688,Israel/2089718/2020_2020.25_Ih:0.07426)NODE_0000132:0.01624,(Israel/2020078/2020_2020.2090163934427_Il:0.03282,(Israel/2089383/2020_2020.25_Ih:0.02741,(Israel/2086012/2020_2020.25_Il:0.01079,(Israel/13077562/2020_2020.2554644808743_Ih:0.00816,Israel/2046548/2020_2020.25_Ih:0.00270)NODE_0000191:0.00809)NODE_0000185:0.01662)NODE_0000184:0.04639)NODE_0000133:0.01669)NODE_0000131:0.00473,((France/HF2393/2020_2020.1953551912568_exog:0.03279,France/HF1684/2020_2020.1625683060108_exog:0.00000)NODE_0000138:0.00603,((France/HF2060/2020_2020.1762295081967_exog:0.00000,DRC/KN-13/2020_2020.1871584699454_exog:0.01093)NODE_0000142:0.01147,((Israel/2047392/2020_2020.2418032786886_Ih:0.04958,(Israel/2047004/2020_2020.2363387978141_Ih:0.00539,(Israel/2047883/2020_2020.2472677595629_Ih:0.00539,Israel/2046815/2020_2020.2581967213114_Ih:0.01632)NODE_0000146:0.01093)NODE_0000174:0.03872)NODE_0000144:0.01766,((France/HF2748/2020_2020.2090163934427_exog:0.00000,(Israel/2113173/2020_2020.2882513661202_Il:0.04809,Israel/2113178/2020_2020.2882513661202_Il:0.04809)NODE_0000168:0.03114)NODE_0000148:0.01608,((Israel/2089368/2020_2020.25_Ih:0.03028,(Israel/130710414/2020_2020.2937158469945_Ih:0.05128,Israel/130710211/2020_2020.2909836065573_Ih:0.04854,Israel/13077558/2020_2020.2554644808743_Ih:0.01302,Israel/130711082/2020_2020.301912568306_Ih:0.05947)NODE_0000180:0.02272)NODE_0000153:0.01779,((Israel/130710067/2020_2020.285519125683_Ih:0.05535,Israel/701002504/2020_2020.23087431694_Ih:0.00070)NODE_0000157:0.01028,((Israel/2089866/2020_2020.25_Ih:0.00809,Israel/2086045/2020_2020.25_Ih:0.00809)NODE_0000159:0.01463,(Israel/2115701/2020_2020.2909836065573_Ih:0.04907,Israel/2089698/2020_2020.25_Ih:0.00809)NODE_0000160:0.01463)NODE_0000158:0.00739)NODE_0000156:0.01796)NODE_0000151:0.00899)NODE_0000147:0.01837)NODE_0000143:0.00981)NODE_0000140:0.00822)NODE_0000137:0.00176)NODE_0000130:0.00073)NODE_0000182:0.01131,((France/B1623/2020_2020.1543715846994_exog:0.00000,((France/ARA10910/2020_2020.2117486338798_exog:0.01682,(Israel/130710159/2020_2020.2882513661202_Ih:0.04585,Israel/130711116/2020_2020.3046448087432_Ih:0.06224)NODE_0000165:0.04748)NODE_0000164:0.02302,((Poland/1104795/2020_2020.2117486338798_exog:0.00000,Israel/130710643/2020_2020.299180327869_Ih:0.08743)NODE_0000167:0.01954,(France/ARA12877/2020_2020.2254098360656_exog:0.01682,(Israel/51146355/2020_2020.2581967213114_Ih:0.01618,Israel/13077377/2020_2020.2527322404371_Ih:0.01072)NODE_0000195:0.03343)NODE_0000169:0.01638)NODE_0000166:0.02030)NODE_0000163:0.01754)NODE_0000162:0.00836,(CostaRica/04/2020_2020.2117486338798_exog:0.05774,USA/VA-DCLS-0033/2020_2020.214480874317_exog:0.06047,France/PL1643/2020_2020.1543715846994_exog:0.00036,(France/HF1871/2020_2020.1707650273224_exog:0.01542,Israel/2046434/2020_2020.25_Ih:0.09465)NODE_0000281:0.00134,(Israel/2086008/2020_2020.25_Ih:0.07472,USA/TX-HMH097/2020_2020.214480874317_exog:0.03920)NODE_0000303:0.02127,(USA/NH-0008/2020_2020.1680327868853_exog:0.00000,(Netherlands/Friesland-3/2020_2020.2390710382513_exog:0.02734,Israel/2047586/2020_2020.2418032786886_Il:0.03007)NODE_0000175:0.04370)NODE_0000286:0.01402,(Israel/13077723/2020_2020.2554644808743_Ih:0.08212,(USA/WI-UW-261/2020_2020.233606557377_exog:0.02233,Denmark/ALAB-SSI481/2020_2020.23087431694_exog:0.01960)NODE_0000177:0.03793)NODE_0000298:0.01934,(Israel/701002792/2020_2020.2418032786886_Il:0.06836,Israel/701002768/2020_2020.2390710382513_Ih:0.06563,(Israel/701002334/2020_2020.2226775956285_Ih:0.02483,(Israel/701002786/2020_2020.2418032786886_Ih:0.02213,Israel/701002555/2020_2020.233606557377_Ih:0.01393)NODE_0000181:0.02183)NODE_0000179:0.02441)NODE_0000328:0.01943,((Israel/2086001/2020_2020.25_Ih:0.05770,(Israel/701002314/2020_2020.2199453551912_Il:0.00000,Israel/701002327/2020_2020.2226775956285_Ih:0.00273)NODE_0000276:0.02764)NODE_0000275:0.03178,((Israel/2089712/2020_2020.25_Ih:0.00809,Israel/2089812/2020_2020.25_Ih:0.00809)NODE_0000272:0.06608,(Israel/2099019/2020_2020.2527322404371_Ih:0.06056,((Israel/2089366/2020_2020.25_Ih:0.01960,Israel/2099416/2020_2020.2527322404371_Ih:0.02233)NODE_0000273:0.03013,(Israel/2020063/2020_2020.2090163934427_Ih:0.00000,(Israel/2089375/2020_2020.25_Ih:0.02115,Israel/990059232/2020_2020.23087431694_Il:0.00202)NODE_0000190:0.01984)NODE_0000189:0.00875)NODE_0000186:0.00809)NODE_0000256:0.01635)NODE_0000241:0.01531)NODE_0000269:0.00651,(USA/NY-NYUMC252/2020_2020.2554644808743_exog:0.08476,Israel/2020038/2020_2020.2090163934427_Ih:0.03831,(Israel/2047738/2020_2020.2445355191257_Ih:0.05210,Israel/2046614/2020_2020.2527322404371_Ih:0.06029,Israel/13077823/2020_2020.2581967213114_Ih:0.06576,Israel/2046616/2020_2020.2527322404371_Il:0.06029,Israel/2089380/2020_2020.25_Ih:0.05756,Israel/2115964/2020_2020.2909836065573_Ih:0.09854,(Israel/2099159/2020_2020.2527322404371_Ih:0.03358,Israel/2115980/2020_2020.2909836065573_Ih:0.07183,Israel/2086004/2020_2020.25_Il:0.03084)NODE_0000207:0.02672,(Israel/51146669/2020_2020.2609289617487_Ih:0.04129,Israel/990300860/2020_2020.2527322404371_Ih:0.03309,Israel/990307712/2020_2020.233606557377_Ih:0.01397)NODE_0000220:0.02720,((Israel/13077846/2020_2020.2581967213114_Il:0.02753,Israel/13077847/2020_2020.2581967213114_Il:0.02753)NODE_0000217:0.03167,((Israel/13077511/2020_2020.2554644808743_Ih:0.02483,Israel/13077510/2020_2020.2554644808743_Il:0.02483)NODE_0000214:0.03034,((Israel/2113161/2020_2020.2882513661202_Ih:0.06011,(USA/CT-Yale-084/2020_2020.2636612021859_exog:0.02154,USA/CT-Yale-099/2020_2020.266393442623_exog:0.02427)NODE_0000202:0.01398)NODE_0000201:0.02041,(Israel/13075832/2020_2020.2445355191257_Ih:0.03282,(Israel/2099018/2020_2020.2527322404371_Ih:0.03368,(Israel/13077875/2020_2020.2581967213114_Ih:0.03843,(Israel/2047749/2020_2020.2445355191257_Ih:0.01960,(Israel/2107137/2020_2020.285519125683_Ih:0.05917,(Israel/2113155/2020_2020.2882513661202_Ih:0.05919,(USA/CT-Yale-120/2020_2020.2773224043715_exog:0.04795,(Israel/2113678/2020_2020.2882513661202_Ih:0.05800,((Israel/13077564/2020_2020.2554644808743_Il:0.01266,(Israel/13077413/2020_2020.2554644808743_Ih:0.00816,Israel/2089723/2020_2020.25_Ih:0.00270)NODE_0000215:0.00450)NODE_0000213:0.00625,(Israel/130711367/2020_2020.3073770491803_Il:0.06479,(USA/CT-Yale-116/2020_2020.2745901639344_exog:0.02697,Israel/2113256/2020_2020.285519125683_Ih:0.03790)NODE_0000218:0.00504)NODE_0000216:0.00603)NODE_0000212:0.00630)NODE_0000211:0.00087)NODE_0000210:0.00031)NODE_0000209:0.00271)NODE_0000208:0.00141)NODE_0000206:0.00517)NODE_0000205:0.00072)NODE_0000204:0.00733)NODE_0000203:0.00398)NODE_0000199:0.00745)NODE_0000337:0.00129)NODE_0000315:0.00656)NODE_0000200:0.02174)NODE_0000198:0.01670,((((Sweden/20-50315/2020_2020.1953551912568_exog:0.02161,(Israel/2123853/2020_2020.301912568306_Ih:0.10808,Israel/2123863/2020_2020.301912568306_Ih:0.10808)NODE_0000283:0.02008)NODE_0000223:0.00649,(Israel/990059203/2020_2020.23087431694_Ih:0.05713,((Israel/130711417/2020_2020.3073770491803_Ih:0.09313,Israel/990333189/2020_2020.233606557377_Ih:0.01935,Israel/990059204/2020_2020.23087431694_Ih:0.01662)NODE_0000243:0.03363,(USA/NY-NYUMC323/2020_2020.2527322404371_exog:0.03867,(Israel/51146503/2020_2020.2609289617487_Ih:0.03418,(Israel/1639996/2020_2020.233606557377_Ih:0.00026,(Israel/2047364/2020_2020.2390710382513_Ih:0.00000,USA/NY-NYUMC228/2020_2020.2554644808743_exog:0.01639)NODE_0000230:0.00573)NODE_0000365:0.00659)NODE_0000236:0.01269)NODE_0000235:0.03345)NODE_0000226:0.00687)NODE_0000225:0.00649)NODE_0000222:0.00653,(((Israel/2047927/2020_2020.2472677595629_Ih:0.08013,Ghana/2986-S10/2020_2020.2472677595629_exog:0.08013)NODE_0000233:-0.00008,(USA/WY-WYPHL007/2020_2020.2035519125684_exog:0.03015,(France/B2343/2020_2020.1789617486338_exog:0.00000,Israel/701002550/2020_2020.233606557377_Ih:0.05464)NODE_0000237:0.00556)NODE_0000234:0.00618)NODE_0000232:0.00655,((Israel/13077497/2020_2020.2527322404371_Il:0.07872,USA/VA-DCLS-0058/2020_2020.2472677595629_exog:0.07326)NODE_0000239:0.00657,(USA/WY-WYPHL015/2020_2020.2117486338798_exog:0.03773,(Israel/13077726/2020_2020.2554644808743_Ih:0.04710,Israel/51146500/2020_2020.2609289617487_Ih:0.05256,Israel/1639953/2020_2020.233606557377_Ih:0.02524,Israel/2020084/2020_2020.2090163934427_Ih:0.00065,Israel/2089697/2020_2020.25_Ih:0.04164,Israel/2089852/2020_2020.25_Ih:0.04164,(((Israel/2086022/2020_2020.25_Ih:0.00809,Israel/13077882/2020_2020.2581967213114_Ih:0.01629)NODE_0000260:0.02786,(Israel/2086033/2020_2020.25_Il:0.02267,(Israel/2113255/2020_2020.285519125683_Ih:0.04532,Israel/2113601/2020_2020.2882513661202_Ih:0.04805)NODE_0000247:0.01287)NODE_0000246:0.01328)NODE_0000244:0.00622,(Israel/2086034/2020_2020.25_Ih:0.03583,(Israel/13077498/2020_2020.2554644808743_Ih:0.03460,(Israel/13077803/2020_2020.2581967213114_Ih:0.03056,(Israel/13075790/2020_2020.2445355191257_Il:0.00471,(Israel/2089839/2020_2020.25_Ih:0.00806,Israel/2099251/2020_2020.2527322404371_Ih:0.01079)NODE_0000252:0.00212)NODE_0000251:0.01220)NODE_0000250:0.00676)NODE_0000249:0.00670)NODE_0000248:0.00634)NODE_0000242:-0.00053)NODE_0000245:0.03434)NODE_0000240:0.00658)NODE_0000238:0.00678)NODE_0000231:-0.00006)NODE_0000221:0.00665,(((Finland/13M83/2020_2020.198087431694_exog:0.02413,Canada/NS-13/2020_2020.198087431694_exog:0.02413)NODE_0000255:0.01332,(Belgium/VM-0325171/2020_2020.23087431694_exog:0.05723,Israel/990059244/2020_2020.23087431694_Il:0.05723,(Netherlands/Flevoland-1/2020_2020.1871584699454_exog:0.00011,(Netherlands/ZuidHolland-30/2020_2020.1926229508197_exog:0.00000,Israel/701002403/2020_2020.2254098360656_Ih:0.03279)NODE_0000257:0.00557)NODE_0000390:0.01341)NODE_0000264:0.01301)NODE_0000254:0.00663,((France/ARA11997/2020_2020.2199453551912_exog:0.05255,France/IDF2989/2020_2020.214480874317_exog:0.04708)NODE_0000259:0.00662,(((Finland/FIN-455/2020_2020.1844262295083_exog:0.00396,USA/NY-Wadsworth-11330-01/2020_2020.181693989071_exog:0.00123)NODE_0000263:0.00662,(((Scotland/CVR704/2020_2020.233606557377_exog:0.01961,Israel/990059202/2020_2020.23087431694_Ih:0.01687)NODE_0000267:0.02002,(Israel/2047011/2020_2020.233606557377_Ih:0.01961,Israel/990059251/2020_2020.23087431694_Ih:0.01688)NODE_0000268:0.02002)NODE_0000266:0.02037,(PuertoRico/CDC-S5/2020_2020.2254098360656_exog:0.03143,(Israel/701002556/2020_2020.233606557377_Ih:0.02066,(Israel/701002540/2020_2020.23087431694_Ih:0.00000,Israel/701002591/2020_2020.233606557377_Ih:0.00273)NODE_0000317:0.01793)NODE_0000271:0.01897)NODE_0000270:0.02037)NODE_0000265:-0.00023)NODE_0000262:0.00663,(((Denmark/ALAB-SSI184/2020_2020.1871584699454_exog:0.00000,Denmark/ALAB-SSI189/2020_2020.1871584699454_exog:0.00000)NODE_0000278:0.01351,(Israel/701002458/2020_2020.2281420765028_Il:0.04795,(Germany/NRW-53/2020_2020.200819672131_exog:0.00701,Australia/VIC48/2020_2020.1953551912568_exog:0.00155)NODE_0000280:0.01362)NODE_0000279:0.00654)NODE_0000277:0.00636,((Denmark/ALAB-HH05/2020_2020.1898907103825_exog:0.00270,Sweden/20-08146/2020_2020.1926229508197_exog:0.00543)NODE_0000284:0.01339,(((Taiwan/NTU09/2020_2020.200819672131_exog:0.00713,Israel/2023922/2020_2020.2090163934427_Ih:0.01533)NODE_0000288:0.01364,((((USA/MD-HP024/2020_2020.217213114754_exog:0.00442,Thailand/Bangkok-0020/2020_2020.2199453551912_exog:0.00715)NODE_0000292:0.00597,(France/ARA11995/2020_2020.2199453551912_exog:0.00715,Germany/NRW-42-3/2020_2020.217213114754_exog:0.00442)NODE_0000293:0.00597)NODE_0000291:0.01325,((Denmark/ALAB-SSI490/2020_2020.2199453551912_exog:0.00715,USA/NY-PV09060/2020_2020.217213114754_exog:0.00442)NODE_0000295:0.00597,(Israel/701002317/2020_2020.2199453551912_Ih:0.00715,USA/NY-PV09069/2020_2020.217213114754_exog:0.00442)NODE_0000296:0.00597)NODE_0000294:0.01325)NODE_0000290:0.00656,((Israel/2046171/2020_2020.2472677595629_Ih:0.03361,USA/NC-200173/2020_2020.2527322404371_exog:0.03908)NODE_0000300:0.02010,(((Israel/701002538/2020_2020.23087431694_Ih:0.00460,Israel/701002489/2020_2020.23087431694_Ih:0.00460)NODE_0000304:0.00662,(Luxembourg/LNS5677421/2020_2020.2363387978141_exog:0.01007,Belgium/ITM-C030/2020_2020.23087431694_exog:0.00460)NODE_0000305:0.00662)NODE_0000302:0.01315,(((Israel/130710716/2020_2020.299180327869_Ih:0.06614,Israel/130711112/2020_2020.3046448087432_Ih:0.07161)NODE_0000309:0.00689,(Israel/2047604/2020_2020.2418032786886_Ih:0.00924,Thailand/Bangkok-0045/2020_2020.2390710382513_exog:0.00650)NODE_0000310:0.00642)NODE_0000307:0.01311,((Israel/130711104/2020_2020.301912568306_Ih:0.05951,Israel/130710097/2020_2020.2882513661202_Ih:0.04585)NODE_0000312:0.01612,(Israel/13075719/2020_2020.2418032786886_Ih:0.00854,Israel/701002561/2020_2020.233606557377_Ih:0.00035)NODE_0000313:0.00697)NODE_0000311:0.01325)NODE_0000306:0.00653)NODE_0000301:0.01295)NODE_0000299:0.00655)NODE_0000289:0.00697)NODE_0000287:0.00647,((Israel/701002426/2020_2020.2281420765028_Ih:0.00000,Israel/990059233/2020_2020.23087431694_Ih:0.00273)NODE_0000297:0.04794,(((Israel/2020068/2020_2020.2090163934427_Ih:0.00212,Israel/2023920/2020_2020.2090163934427_Il:0.00212)NODE_0000319:0.01350,((USA/AZ-WL171/2020_2020.214480874317_exog:0.00000,Germany/NRW-42-2/2020_2020.214480874317_exog:0.00000)NODE_0000321:0.01453,(USA/TX-HMH0452/2020_2020.2554644808743_exog:0.04257,(Israel/990430264/2020_2020.2418032786886_Ih:0.02193,Israel/701002313/2020_2020.2199453551912_Il:0.00008)NODE_0000323:0.00697)NODE_0000322:0.01295)NODE_0000320:0.00655)NODE_0000318:0.00673,((Poland/1105644/2020_2020.2117486338798_exog:0.00519,Israel/51140271/2020_2020.2117486338798_Ih:0.00519)NODE_0000325:0.01344,((Israel/51146683/2020_2020.2609289617487_Ih:0.04762,((Israel/2089861/2020_2020.25_Ih:0.01079,Israel/990300691/2020_2020.2472677595629_Il:0.00806)NODE_0000330:0.01968,(Israel/701002440/2020_2020.2281420765028_Il:0.00196,Israel/701002462/2020_2020.2281420765028_Ih:0.00196)NODE_0000331:0.00665)NODE_0000329:0.00623)NODE_0000327:0.01344,((Israel/701002681/2020_2020.2363387978141_Ih:0.00981,Netherlands/Drente-1/2020_2020.23087431694_exog:0.00435)NODE_0000333:0.01340,((Israel/130710062/2020_2020.285519125683_Ih:0.05247,Israel/13077494/2020_2020.2527322404371_Ih:0.01968)NODE_0000335:0.01320,((Israel/130710099/2020_2020.2882513661202_Ih:0.04581,Israel/130710217/2020_2020.2909836065573_Ih:0.04854)NODE_0000308:0.01583,(USA/WI-142/2020_2020.2745901639344_exog:0.03552,Israel/701002752/2020_2020.2390710382513_Ih:0.00000)NODE_0000338:0.01246)NODE_0000336:0.00676)NODE_0000334:0.00673)NODE_0000332:0.01326)NODE_0000326:0.00674)NODE_0000324:0.00645)NODE_0000316:0.00647)NODE_0000314:0.00663)NODE_0000285:-0.00023)NODE_0000282:0.00651)NODE_0000274:0.00008)NODE_0000261:0.00644)NODE_0000258:0.00677)NODE_0000253:-0.00006)NODE_0000219:0.00006)NODE_0000197:0.00800)NODE_0000188:0.00327)NODE_0000155:0.01073)NODE_0000135:0.00059)NODE_0000043:0.01878)NODE_0000044:0.03400)NODE_0000046:0.02151)NODE_0000030:0.00537)NODE_0000028:0.00690)NODE_0000036:0.01271)NODE_0000371:0.04721)NODE_0000000:1.00000;
+" />
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+            <distribution id="PhydynSEIR.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.distribution.STreeLikelihoodODE" equations="QL" useStateName='true' forgiveAgtY='1.0' minP="0.01">
+                <popmodel id="pdseirmodel.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.PopModelODE">
+
+                    <!-- SEIR MODEL (assume dynamics begin on SIR_T0) -->
+                    <matrixeq id="MatrixEquation.0" spec="phydyn.model.MatrixEquation" destination="Il" origin="E" type="migration">
+                      if ( t > 2020.0874316939892 ) then (gamma0*E*(1-p_h)) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.1" spec="phydyn.model.MatrixEquation" destination="Ih" origin="E" type="migration">
+                      if ( t > 2020.0874316939892 ) then (gamma0*E*p_h) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.2" spec="phydyn.model.MatrixEquation" destination="E" origin="Il" type="birth">
+                      (beta*Il*S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.3" spec="phydyn.model.MatrixEquation" destination="E" origin="Ih" type="birth">
+                      (beta*Ih*tau * S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.4" spec="phydyn.model.MatrixEquation" origin="Il" type="death">
+                      if ( t > 2020.0874316939892 ) then (gamma1*Il) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.5" spec="phydyn.model.MatrixEquation" origin="Ih" type="death">
+                      if ( t > 2020.0874316939892 ) then (gamma1*Ih) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.6" spec="phydyn.model.MatrixEquation" origin="R" type="nondeme">
+                      if ( t > 2020.0874316939892 ) then (gamma1*(Il + Ih)) else 0.0
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.7" spec="phydyn.model.MatrixEquation" origin="S" type="nondeme">
+                      (-beta*(Ih*tau+Il) * S / N)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.8" spec="phydyn.model.MatrixEquation" origin="infections" type="nondeme">
+                      (beta*(Ih*tau+Il) * S / N)
+                    </matrixeq>
+
+                    <matrixeq id="MatrixEquation.13" spec="phydyn.model.MatrixEquation" destination="E" origin="exog" type="migration">
+                      (importRate)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.14" spec="phydyn.model.MatrixEquation" destination="exog" origin="E" type="migration">
+                      (importRate)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.17" spec="phydyn.model.MatrixEquation" origin="migrations" type="nondeme">
+                      (importRate)
+                    </matrixeq>
+
+                    <!-- Growth of exog -->
+                    <matrixeq id="MatrixEquation.15" spec="phydyn.model.MatrixEquation" destination="exog" origin="exog" type="birth">
+                      (betaExog * exog)
+                    </matrixeq>
+                    <matrixeq id="MatrixEquation.16" spec="phydyn.model.MatrixEquation" origin="exog" type="death">
+                      (gammaExog * exog)
+                    </matrixeq>
+
+                  <definition id="Definition.0" spec="phydyn.model.Definition" value=" N = S + Il + Ih + E + R  "/>
+                  <definition id="Definition.1" spec="phydyn.model.Definition"
+                      value=" beta = if (t > 2020.2158469945355) then max(0.0, a*(R0*gamma1)/((1-p_h)+tau*p_h)) else
+                                     if (t > 2020.0874316939892) then max(0.0, (R0*gamma1)/((1-p_h)+tau*p_h)) else 0.0 "/>
+                    <definition id="Definition.2" spec="phydyn.model.Definition" value=" betaExog =  gammaExog + exogGrowthRate "/>
+                     <definition id="Definition.3" spec="phydyn.model.Definition" 
+                        value=" importRate =  if (t > 2020.18169399) then (380.4256351069014*exp(0.8*-51.68986449810366*(t-2020.18169399))) else if (t > 2020.0511430143656) then (exp(0.8*56.887337283993205*(t-2020.0511430143656))) else 0.0"/> 
+
+                    <popParams id="initValues" spec="phydyn.model.TrajectoryParameters" integrationSteps="500">
+                        <!-- Fixed parameters -->
+                        <!-- start of simulation -->
+                        <parameter id="seir.t0.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="t0">2019.7</parameter>
+                        <!-- Size of susceptible population -->
+                        <initialValue id="seir.S.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="S">
+                            <parameter id="seir.S.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">8883800</parameter>
+                        </initialValue>
+                        <!-- Initial number of I_low individuals (effectively 0) -->
+                        <initialValue id="seir.Il.pv.t:july22_TMRCA_Import_Final_0.8_0.8l" spec="phydyn.model.ParamValue" pname="Il">
+                            <parameter id="seir.Il.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">1.0E-8</parameter>
+                        </initialValue>
+                        <!-- Initial number of I_high individuals (effectively 0) -->
+                        <initialValue id="seir.Ih.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="Ih">
+                            <parameter id="seir.Ih.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">1.0E-8</parameter>
+                        </initialValue>
+                        <!-- Initial number of recovered individuals (0) -->
+                        <initialValue id="seir.R.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="R">
+                            <parameter id="seir.R.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+
+                        <!-- Initial number of infections -->
+                        <initialValue id="seir.infections.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="infections">
+                            <parameter id="seir.infections.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+                        <!-- Initial number of migrations -->
+                        <initialValue id="seir.migrations.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="migrations">
+                            <parameter id="seir.migrations.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="pvalue">0.0</parameter>
+                        </initialValue>
+
+                        <!-- Estimated parameters -->
+                        <!-- Initial number of exposed -->
+                        <initialValue id="seir.E.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="E" pvalue="@seir.E.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+                        <!-- Initial size of exog -->
+                        <initialValue id="seir.exog.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="exog" pvalue="@seir.exog.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+
+
+                    </popParams>
+                    <modelParams id="rates" spec="phydyn.model.ModelParameters">
+                        <!-- Fixed parameters -->
+                        <!-- LATENT period -->
+                        <param id="seir.gamma0.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="gamma0">
+                            <parameter id="seir.gamma0.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="pvalue">122.0</parameter>
+                        </param>
+                        <!-- Duration of infectiousness -->
+                        <param id="seir.gamma1.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="gamma1">
+                            <parameter id="seir.gamma1.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="pvalue">66.54545454545455</parameter>
+                        </param>
+                        <!-- Duration of being infected for exog (E + Il/Ih) -->
+                        <param id="seir.gammaExog.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="gammaExog">
+                            <parameter id="seir.gammaExog.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="pvalue">43.05882352941177</parameter>
+                        </param>
+                        <!-- Proportion of I_high -->
+                        <param id="seir.p_h.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" names="p_h">
+                            <parameter id="seir.p_h.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="values">0.8</parameter>
+                        </param>
+                        <param id="seir.tau.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" names="tau">
+                            <parameter id="seir.tau.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="values">0.9999999999999998</parameter>
+                        </param>
+                        <!-- Growth rate of exog -->
+                        <param id="seir.exogGrowthRate.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" names="exogGrowthRate">
+                            <parameter id="seir.exogGrowthRate.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="values">24.0</parameter>
+                        </param>
+
+                        <!-- Fitted parameters -->
+                        <!-- R0 -->
+                        <param id="seir.R0.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="R0" pvalue="@seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+                        <param id="seir.a.pv.t:july22_TMRCA_Import_Final_0.8_0.8" spec="phydyn.model.ParamValue" pname="a" pvalue="@seir.a.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+                    </modelParams>
+                </popmodel>
+
+                <parameter id="seir.Ne.t:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="Ne">0.1</parameter>
+                <treeIntervals id="STreeIntervals.t:july22_TMRCA_Import_Final_0.8_0.8" spec="STreeIntervals" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+            </distribution>
+            <prior id="ClockPrior.c:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@clockRate.c:july22_TMRCA_Import_Final_0.8_0.8">
+                <Uniform id="Uniform.8" name="distr" upper="Infinity"/>
+            </prior>
+            <prior id="FrequenciesPrior.s:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@freqParameter.s:july22_TMRCA_Import_Final_0.8_0.8">
+                <Uniform id="Uniform.3" name="distr"/>
+            </prior>
+            <prior id="KappaPrior.s:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@kappa.s:july22_TMRCA_Import_Final_0.8_0.8">
+                <LogNormal id="LogNormalDistributionModel.01" name="distr">
+                    <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    <parameter id="RealParameter.2" spec="parameter.RealParameter" estimate="false" name="S">1.25</parameter>
+                </LogNormal>
+            </prior>
+            <prior id="GammaShapePrior.s:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@gammaShape.s:july22_TMRCA_Import_Final_0.8_0.8">
+              <Exponential id="Exponential.0" name="distr">
+                  <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+              </Exponential>
+            </prior>
+
+            <prior id="seir.E.prior.t:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@seir.E.t:july22_TMRCA_Import_Final_0.8_0.8">
+                <Exponential id="Exponential.2" name="distr">
+                    <parameter id="RealParameter.20" spec="parameter.RealParameter" lower="0.0" name="mean" >1.0</parameter>
+                </Exponential>
+            </prior>
+
+            <prior id="seir.R0.prior.t:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8">
+                <LogNormal id="LogNormalDistributionModel.0" name="distr">
+                    <parameter id="RealParameter.18" spec="parameter.RealParameter" estimate="false" name="M">1.5</parameter>
+                    <parameter id="RealParameter.28" spec="parameter.RealParameter" estimate="false" name="S">0.5</parameter>
+                </LogNormal>
+            </prior>
+
+            <prior id="seir.a.prior.t:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@seir.a.t:july22_TMRCA_Import_Final_0.8_0.8">
+                <Uniform id="Uniform.0" name="distr" upper="Infinity"/>
+            </prior>
+
+            <prior id="seir.exog.prior.t:july22_TMRCA_Import_Final_0.8_0.8" name="distribution" x="@seir.exog.t:july22_TMRCA_Import_Final_0.8_0.8">
+                <Exponential id="Exponential.25" name="distr">
+                    <parameter id="RealParameter.30" spec="parameter.RealParameter" name="mean" >1.0</parameter>
+                </Exponential>
+            </prior>
+        </distribution>
+
+        <distribution id="likelihood" spec="util.CompoundDistribution" useThreads="true">
+            <distribution id="treeLikelihood.july22_TMRCA_Import_Final_0.8_0.8" spec="ThreadedTreeLikelihood" data="@july22_TMRCA_Import_Final_0.8_0.8" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8">
+                <siteModel id="SiteModel.s:july22_TMRCA_Import_Final_0.8_0.8" spec="SiteModel" gammaCategoryCount="4" shape="@gammaShape.s:july22_TMRCA_Import_Final_0.8_0.8">
+                    <parameter id="mutationRate.s:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" name="mutationRate">1.0</parameter>
+                    <parameter id="proportionInvariant.s:july22_TMRCA_Import_Final_0.8_0.8" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                    <substModel id="hky.s:july22_TMRCA_Import_Final_0.8_0.8" spec="HKY" kappa="@kappa.s:july22_TMRCA_Import_Final_0.8_0.8">
+                        <frequencies id="estimatedFreqs.s:july22_TMRCA_Import_Final_0.8_0.8" spec="Frequencies" frequencies="@freqParameter.s:july22_TMRCA_Import_Final_0.8_0.8"/>
+                    </substModel>
+                </siteModel>
+                <branchRateModel id="StrictClock.c:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.evolution.branchratemodel.StrictClockModel" clock.rate="@clockRate.c:july22_TMRCA_Import_Final_0.8_0.8"/>
+            </distribution>
+
+        </distribution>
+    </distribution>
+
+    <!-- Substitution model operators -->
+    <operator id="StrictClockRateScaler.c:july22_TMRCA_Import_Final_0.8_0.8" spec="ScaleOperator" parameter="@clockRate.c:july22_TMRCA_Import_Final_0.8_0.8" scaleFactor="0.75" weight="3.0"/>
+    <operator id="strictClockUpDownOperator.c:july22_TMRCA_Import_Final_0.8_0.8" spec="UpDownOperator" scaleFactor="0.4" weight="3.0">
+        <up idref="clockRate.c:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <down idref="Tree.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </operator>
+    <operator id="KappaScaler.s:july22_TMRCA_Import_Final_0.8_0.8" spec="ScaleOperator" parameter="@kappa.s:july22_TMRCA_Import_Final_0.8_0.8" scaleFactor="0.5" weight="0.1"/>
+    <operator id="gammaShapeScaler.s:july22_TMRCA_Import_Final_0.8_0.8" spec="ScaleOperator" parameter="@gammaShape.s:july22_TMRCA_Import_Final_0.8_0.8" scaleFactor="0.5" weight="0.1"/>
+    <operator id="FrequenciesExchanger.s:july22_TMRCA_Import_Final_0.8_0.8" spec="DeltaExchangeOperator" delta="0.01" weight="0.2">
+        <parameter idref="freqParameter.s:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </operator>
+
+    <!-- SEIR model operators -->
+    <operator id="PhydynSEIRTreeScaler.t:july22_TMRCA_Import_Final_0.8_0.8" spec="ScaleOperator" scaleFactor="0.8" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="3.0"/>
+    <operator id="PhydynSEIRTreeRootScaler.t:july22_TMRCA_Import_Final_0.8_0.8" spec="ScaleOperator" rootOnly="true" scaleFactor="0.7" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="3.0"/>
+    <operator id="PhydynSEIRUniformOperator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="Uniform" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="30.0"/>
+    <operator id="PhydynSEIRSubtreeSlide.t:july22_TMRCA_Import_Final_0.8_0.8" spec="SubtreeSlide" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="15.0" size="0.8"/>
+    <operator id="PhydynSEIRNarrow.t:july22_TMRCA_Import_Final_0.8_0.8" spec="Exchange" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="15.0"/>
+    <operator id="PhydynSEIRWide.t:july22_TMRCA_Import_Final_0.8_0.8" spec="Exchange" isNarrow="false" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="3.0"/>
+    <operator id="PhydynSEIRWilsonBalding.t:july22_TMRCA_Import_Final_0.8_0.8" spec="WilsonBalding" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8" weight="3.0"/>
+
+    <!-- Epi parameter operators -->
+    <operator id="seir.R0.E.operator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="UpDownOperator" scaleFactor="0.5" weight="3.0">
+        <up idref="seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <down idref="seir.E.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </operator>
+    <operator id="seir.R0.operator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="RealRandomWalkOperator" parameter="@seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8" useGaussian="true" weight="3.0" windowSize="0.1"/>
+    <operator id="seir.a.operator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="RealRandomWalkOperator" parameter="@seir.a.t:july22_TMRCA_Import_Final_0.8_0.8" useGaussian="true" weight="2.0" windowSize="0.25"/>
+    <operator id="seir.exog.operator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="RealRandomWalkOperator" parameter="@seir.exog.t:july22_TMRCA_Import_Final_0.8_0.8" useGaussian="true" weight="3.0" windowSize="0.005"/>
+    <operator id="seir.E.operator.t:july22_TMRCA_Import_Final_0.8_0.8" spec="RealRandomWalkOperator" parameter="@seir.E.t:july22_TMRCA_Import_Final_0.8_0.8" useGaussian="true" weight="3.0" windowSize="1.0"/>
+
+    <logger id="tracelog" spec="Logger" fileName="july22_TMRCA_Import_Final_0.8_0.8.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="treeLikelihood.july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log id="TreeHeight.t:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.evolution.tree.TreeHeightLogger" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="clockRate.c:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="kappa.s:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="gammaShape.s:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="PhydynSEIR.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="seir.R0.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="seir.a.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="seir.exog.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="seir.E.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+        <log idref="freqParameter.s:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </logger>
+
+    <logger id="screenlog" spec="Logger" logEvery="10000">
+        <log idref="posterior"/>
+        <log idref="likelihood"/>
+        <log idref="prior"/>
+        <log idref="PhydynSEIR.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </logger>
+
+    <logger id="treelog.t:july22_TMRCA_Import_Final_0.8_0.8" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+        <log id="TreeWithMetaDataLogger.t:july22_TMRCA_Import_Final_0.8_0.8" spec="beast.evolution.tree.TreeWithMetaDataLogger" tree="@Tree.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </logger>
+
+    <logger id="popTrajLog" spec="Logger" fileName="seir.july22_TMRCA_Import_Final_0.8_0.8.traj" logEvery="1000">
+        <log id="trajectoryLogger" spec="phydyn.loggers.TrajectoryLogger" pointFrequency="1" popModel="@pdseirmodel.t:july22_TMRCA_Import_Final_0.8_0.8"/>
+    </logger>
+
+    <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+
+</run>
+
+</beast>
